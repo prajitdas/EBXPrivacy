@@ -1597,3 +1597,4 @@ along with XPrivacy.  If not, see [http://www.gnu.org/licenses/](http://www.gnu.
 -------------------------------------------------------------------------------------------------------
 Original source was [here](https://github.com/M66B/XPrivacy)
 We will try to use it for own purposes.
+We split from original repo @ 40e195e
