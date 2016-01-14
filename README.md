@@ -1,4 +1,4 @@
-XPrivacy
+EBXPrivacy
 ========
 
 The ultimate, yet easy to use, privacy manager for Android
@@ -21,7 +21,7 @@ Index
 * [Permissions](#permissions)
 * [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)
 * [Support](#support)
-* [Changelog](https://github.com/M66B/XPrivacy/blob/master/CHANGELOG.md)
+* [Changelog](https://github.com/M66B/EBXPrivacy/blob/master/CHANGELOG.md)
 * [Similar Solutions](#similar-solutions)
 * [In The Media](#in-the-media)
 * [Contributing](#contributing)
@@ -30,58 +30,58 @@ Index
 Description
 -----------
 
-XPrivacy can prevent applications from leaking privacy-sensitive data
+EBXPrivacy can prevent applications from leaking privacy-sensitive data
 by restricting the categories of data an application can access.
-XPrivacy feeds applications fake data or no data at all.
+EBXPrivacy feeds applications fake data or no data at all.
 It can restrict several data categories, such as *contacts* or *location*.
 For example, if you restrict an application's access to contacts,
 that application will receive an empty contacts list (don't try this with the contacts application itself without a backup).
 Similarly, restricting an application's access to your location will send a fake location to that application.
 
-XPrivacy doesn't revoke or block permissions from an application,
+EBXPrivacy doesn't revoke or block permissions from an application,
 so most applications will continue to work as before and won't force close (crash).
 There are two exceptions: access to the internet and to external storage (typically an SD-card)
 are restricted by denying access (revoking permissions).
 There is no other way to restrict such access
 because Android delegates handling these permissions to the underlying Linux network/file system.
-XPrivacy can fake an offline (internet) and unmounted (storage) state,
+EBXPrivacy can fake an offline (internet) and unmounted (storage) state,
 but some applications still try to access the internet and storage,
 potentially resulting in crashes or error messages.
 If restricting a category of data for an application causes functional limitations,
-XPrivacy can once again allow access to the data category to solve the issue.
+EBXPrivacy can once again allow access to the data category to solve the issue.
 There is a convenient on/off toggle switch for all restrictions for each application.
 
 By default, all newly installed applications cannot access any data category,
 which prevents a new application from leaking sensitive data right after installing it.
 Shortly after installing a new application,
-XPrivacy will ask which data categories you want the new application to have access to.
-XPrivacy comes with an application browser
+EBXPrivacy will ask which data categories you want the new application to have access to.
+EBXPrivacy comes with an application browser
 that allows you to quickly enable or disable applications' access to any data category.
 You can edit all of an application's data categories.
 
 To help you identify potential data leaks,
-XPrivacy monitors all applications' attempts to access sensitive data.
-XPrivacy displays an orange warning triangle icon when an application has attempted to access data.
-If an application has requested Android permissions to access data, XPrivacy displays a green key icon.
-XPrivacy also displays an internet icon if an application has internet access,
+EBXPrivacy monitors all applications' attempts to access sensitive data.
+EBXPrivacy displays an orange warning triangle icon when an application has attempted to access data.
+If an application has requested Android permissions to access data, EBXPrivacy displays a green key icon.
+EBXPrivacy also displays an internet icon if an application has internet access,
 which clarifies that the application poses a risk of sharing data with an external server.
 
-XPrivacy is built using the [Xposed framework](http://forum.xda-developers.com/xposed/xposed-installer-versions-changelog-t2714053),
+EBXPrivacy is built using the [Xposed framework](http://forum.xda-developers.com/xposed/xposed-installer-versions-changelog-t2714053),
 which it uses to tap into a vast number of carefully selected Android functions.
-Depending on the function, XPrivacy skips execution of the original function
+Depending on the function, EBXPrivacy skips execution of the original function
 (for example, when an application tries to set a proximity alert)
 or alters the result of the original function (for example, to return an empty message list).
 
-XPrivacy has been tested with Android version 4.0.3 - 5.1.1 (Ice Cream Sandwich, Jelly Bean, KitKat, Lollipop),
+EBXPrivacy has been tested with Android version 4.0.3 - 5.1.1 (Ice Cream Sandwich, Jelly Bean, KitKat, Lollipop),
 and is reported to work with most Android variants, including stock ROMs.
 Root access is needed to install the Xposed framework.
 
 
-**XPrivacy was a lot of work, so please support this project.**
+**EBXPrivacy was a lot of work, so please support this project.**
 
 If you want to donate, see [here](http://www.xprivacy.eu/) for all options.
 
-**Use XPrivacy entirely at your own risk.**
+**Use EBXPrivacy entirely at your own risk.**
 
 Features
 --------
@@ -325,8 +325,8 @@ Limitations
 * Internet and storage can only be restricted for applications, providers, and services started by the Android package manager
 * There is no usage data for *inet*, *media* and *sdcard*, since this is not technically possible
 * Because it is static, [*Build.SERIAL*](http://developer.android.com/reference/android/os/Build.html#SERIAL) can only be randomized when an application starts, and there is no usage data
-* Due to a bug in Chromium, the user agent cannot be restricted in all cases ([issue](https://github.com/M66B/XPrivacy/issues/825))
-* Due to a custom implementation, the clipboard cannot be restricted on some Samsung stock ROMs ([issue](https://github.com/M66B/XPrivacy/issues/857))
+* Due to a bug in Chromium, the user agent cannot be restricted in all cases ([issue](https://github.com/M66B/EBXPrivacy/issues/825))
+* Due to a custom implementation, the clipboard cannot be restricted on some Samsung stock ROMs ([issue](https://github.com/M66B/EBXPrivacy/issues/857))
 * It is not possible to restrict external hardware MAC addresses or the external IP address, see also [FAQ 33](#FAQ33)
 * You cannot restrict *Configuration.MCC/MNC* on demand
 * Allowing contacts for SIM-contacts isn't supported (who is using these anymore?)
@@ -334,10 +334,10 @@ Limitations
 * It is possible to unhook methods in user space using native libraries, see for more details [FAQ 68](#FAQ68)
 * In some situations, the on demand restricting dialog freezes, notably when using volume keys. This cannot be fixed due to Android limitations.
 * In some situations, the on demand restricting dialog is overlayed by other windows, notably notifications. This cannot be fixed due to Android limitations.
-* Restricting *Internet/connect* and/or *View/loadURL* for the stock browser doesn't prevent loading of pages ([issue](https://github.com/M66B/XPrivacy/issues/1685))
+* Restricting *Internet/connect* and/or *View/loadURL* for the stock browser doesn't prevent loading of pages ([issue](https://github.com/M66B/EBXPrivacy/issues/1685))
 * Android System Webview cannot be restricted on Android Lollipop
 
-#### XPrivacy
+#### EBXPrivacy
 
 * You cannot restrict some functions in the *Identification* category, because it is used for submitting restrictions
 	* The Android ID is salted with the serial number and MD5 hashed before communicating with the crowd sourced restrictions server
@@ -347,21 +347,21 @@ Limitations
 * You cannot restrict *System* because it is needed to get the application list
 * You cannot restrict *View* because it is needed to open links to the [crowd sourced restrictions](http://crowd.xprivacy.eu/)
 
-You can restrict the XPrivacy app's access to accounts, contacts, and other things.
+You can restrict the EBXPrivacy app's access to accounts, contacts, and other things.
 
 Compatibility
 -------------
 
-* XPrivacy has been tested on Android versions 4.0.3 - 5.1.1 (ICS, Jelly Bean, KitKat, Lollipop).
+* EBXPrivacy has been tested on Android versions 4.0.3 - 5.1.1 (ICS, Jelly Bean, KitKat, Lollipop).
 It is reported to work with most Android variants, including stock ROMs.
 
-* **XPrivacy is incompatible with LBE Security Master** ([issue](https://github.com/M66B/XPrivacy/issues/1231)).
+* **EBXPrivacy is incompatible with LBE Security Master** ([issue](https://github.com/M66B/EBXPrivacy/issues/1231)).
 
-* **XPrivacy is incompatible with the security center of MIUI** ([issue](https://github.com/M66B/XPrivacy/issues/1940)).
+* **EBXPrivacy is incompatible with the security center of MIUI** ([issue](https://github.com/M66B/EBXPrivacy/issues/1940)).
 See [here](http://forum.xda-developers.com/showpost.php?p=55810186&postcount=12178) for a solution.
 
 * You need to use the quirk 'noresolve' when using [GoPro](https://play.google.com/store/apps/details?id=com.gopro.smarty)
-and some other wireless cameras, like the Sony QX1/10/30/100 ([issue](https://github.com/M66B/XPrivacy/issues/1751)).
+and some other wireless cameras, like the Sony QX1/10/30/100 ([issue](https://github.com/M66B/EBXPrivacy/issues/1751)).
 
 * Candy Crush is known to crash on some ROMs, see [here](http://forum.xda-developers.com/showpost.php?p=58722199&postcount=13666).
 
@@ -383,23 +383,23 @@ Installation may seem lengthy, but you can do it quickly:
 	* For Android 5.x see [this XDA thread](http://forum.xda-developers.com/showthread.php?t=3034811)
 	* For Android 5.0.x Touchwiz ROMs see [this XDA thread](http://forum.xda-developers.com/xposed/unofficial-xposed-samsung-lollipop-t3113463)
 	* For Android 5.1 Touchwiz ROMs see [this XDA thread](http://forum.xda-developers.com/xposed/unofficial-xposed-samsung-lollipop-t3180960)
-1. Download and install XPrivacy from [here](http://repo.xposed.info/module/edu.umbc.cs.ebiquity.mithril.xprivacy)
-	* Alternatively, download it from [here](https://github.com/M66B/XPrivacy/releases)
-1. Enable XPrivacy in the Xposed installer
-1. Start XPrivacy one time
+1. Download and install EBXPrivacy from [here](http://repo.xposed.info/module/edu.umbc.cs.ebiquity.mithril.xprivacy)
+	* Alternatively, download it from [here](https://github.com/M66B/EBXPrivacy/releases)
+1. Enable EBXPrivacy in the Xposed installer
+1. Start EBXPrivacy one time
 1. Reboot
 
-I do not recommend using XPrivacy in combination with any of the
+I do not recommend using EBXPrivacy in combination with any of the
 [similar solutions](#similar-solutions),
 because this could result in conflicts and potential data leaks.
 
 There is an unofficial backported Gingerbread version available [here](http://forum.xda-developers.com/showpost.php?p=44034334).
 Please note that only the official version is supported.
 
-If you want to uninstall XPrivacy, you have two options:
+If you want to uninstall EBXPrivacy, you have two options:
 
-1. Disable XPrivacy in the Xposed installer
-1. Uninstall the XPrivacy application
+1. Disable EBXPrivacy in the Xposed installer
+1. Uninstall the EBXPrivacy application
 
 In either case, don't forget to reboot.
 
@@ -412,12 +412,12 @@ Upgrading
 * **Do not remove the previous version** (else you will lose your settings)
 * Download the new version (with a [pro license](http://www.xprivacy.eu/) you can use the menu *Help ...* > *Check for updates*)
 * Install the new version over the previous version
-* Wait until the Xposed installer recognizes the update (else XPrivacy might not be enabled)
+* Wait until the Xposed installer recognizes the update (else EBXPrivacy might not be enabled)
 * Start the new version once (else Android will not send the *Boot Completed* event)
 * Reboot your device
-* Wait until the XPrivacy update service has been completed (showing 100%)
+* Wait until the EBXPrivacy update service has been completed (showing 100%)
 
-When following this procedure, your data will not leak because the Xposed part of XPrivacy keeps running.
+When following this procedure, your data will not leak because the Xposed part of EBXPrivacy keeps running.
 
 Usage
 -----
@@ -430,11 +430,11 @@ Usage
 
 Use common sense when restricting; don't expect internet access if you restricted the internet category, etc.
 
-Get used to XPrivacy before using more advanced features, like function exceptions.
+Get used to EBXPrivacy before using more advanced features, like function exceptions.
 
 #### Detailed tutorial
 
-XPrivacy starts in the main view, where a data category can be selected at the top.
+EBXPrivacy starts in the main view, where a data category can be selected at the top.
 By ticking one or more check boxes in the list below, you can restrict the selected data category for the chosen applications.
 The default category is *All*, meaning that all data categories will be restricted.
 
@@ -489,23 +489,23 @@ will erase all application specific settings so that the global settings will ag
 The default restrictions template (in the main menu) is applied automatically to newly installed applications
 and manually via the menu item 'Apply template' in the application's detailed view.
 
-You can find a **very useful overview of all menu items** [here](https://github.com/M66B/XPrivacy/blob/master/MENU.md).
+You can find a **very useful overview of all menu items** [here](https://github.com/M66B/EBXPrivacy/blob/master/MENU.md).
 
-**Use XPrivacy entirely at your own risk.**
+**Use EBXPrivacy entirely at your own risk.**
 
 Permissions
 -----------
 
-XPrivacy asks for the following Android permissions:
+EBXPrivacy asks for the following Android permissions:
 
 * Accounts: to be able to restrict applications' access to accounts
 * Contacts: to be able to restrict applications' access to contacts
-* Boot: to be able to check if XPrivacy is enabled
+* Boot: to be able to check if EBXPrivacy is enabled
 * Internet: to be able to submit and fetch [crowd sourced restrictions](http://crowd.xprivacy.eu/)
-* Storage: to be able to read the pro license file and to be able to export XPrivacy's settings to the SD-card (only with a [pro license](http://www.xprivacy.eu/))
+* Storage: to be able to read the pro license file and to be able to export EBXPrivacy's settings to the SD-card (only with a [pro license](http://www.xprivacy.eu/))
 * Wakelock: to keep the processor running during batch operations
 
-If desired, you can even restrict XPrivacy from accessing any of the above,
+If desired, you can even restrict EBXPrivacy from accessing any of the above,
 but there are some [limitations](#limitations).
 
 Please note that any Xposed module basically has root permissions and therefore can circumvent any Android permission.
@@ -514,18 +514,18 @@ Please note that any Xposed module basically has root permissions and therefore 
 --------------------------------
 
 <a name="FAQ1"></a>
-**(1) Will XPrivacy make my device slower?**
+**(1) Will EBXPrivacy make my device slower?**
 
 Maybe a little bit, but you probably won't notice.
 
 If you run comparison benchmarks, please submit them.
 
-But my device is slow with XPrivacy!
+But my device is slow with EBXPrivacy!
 It appeared that in some cases this was caused by the TRIM bug.
 See [here](http://forum.xda-developers.com/showthread.php?t=2104326) for more information and a solution.
 
 <a name="FAQ2"></a>
-**(2) Does XPrivacy use a lot of memory and battery?**
+**(2) Does EBXPrivacy use a lot of memory and battery?**
 
 Almost nothing.
 
@@ -536,18 +536,18 @@ There are many [guides](http://www.androidcentral.com/root) to help you to root 
 Use your favorite search engine to find one.
 
 <a name="FAQ4"></a>
-**(4) How can I reset an application's XPrivacy settings?**
+**(4) How can I reset an application's EBXPrivacy settings?**
 
 While viewing an application's restrictions, select *Menu* > *Clear*, then reboot.
 
 <a name="FAQ5"></a>
-**(5) Can I backup XPrivacy's restrictions, settings, and usage data?**
+**(5) Can I backup EBXPrivacy's restrictions, settings, and usage data?**
 
-Starting with version 1.11.13, you can no longer backup XPrivacy's data with standard backup tools, such as Titanium Backup.
-This is because the database is no longer stored in the XPrivacy data folder, but in a system folder.
-I have tried to store the database in the XPrivacy data folder, but this leads to all kinds of permission problems.
+Starting with version 1.11.13, you can no longer backup EBXPrivacy's data with standard backup tools, such as Titanium Backup.
+This is because the database is no longer stored in the EBXPrivacy data folder, but in a system folder.
+I have tried to store the database in the EBXPrivacy data folder, but this leads to all kinds of permission problems.
 
-The best practice is to use XPrivacy's export function (*Main Menu* > *Export*) to backup XPrivacy data,
+The best practice is to use EBXPrivacy's export function (*Main Menu* > *Export*) to backup EBXPrivacy data,
 but please note that this requires a [pro license](http://www.xprivacy.eu/).
 
 You can automate backups by sending an intent:
@@ -571,42 +571,42 @@ You can do this with [Tasker](https://play.google.com/store/apps/details?id=net.
 * Extra: FileName:/sdcard/test.xml (optional, to specify an export location and file name)
 
 <a name="FAQ6"></a>
-**(6) Precisely which functions can XPrivacy restrict?**
+**(6) Precisely which functions can EBXPrivacy restrict?**
 
-Many. See [here](https://github.com/M66B/XPrivacy/blob/master/src/biz/bokhorst/xprivacy/Meta.java) for details.
+Many. See [here](https://github.com/M66B/EBXPrivacy/blob/master/src/biz/bokhorst/xprivacy/Meta.java) for details.
 
 <a name="FAQ7"></a>
-**(7) How safe is XPrivacy?**
+**(7) How safe is EBXPrivacy?**
 
-Great care has been taken to develop XPrivacy. Nevertheless, on rare occasions, data can leak and applications can crash.
+Great care has been taken to develop EBXPrivacy. Nevertheless, on rare occasions, data can leak and applications can crash.
 
 <a name="FAQ8"></a>
 **(8) What does "An internal check failed..." error message mean?**
 
-An internal check of XPrivacy failed, resulting in potential data leakage.
+An internal check of EBXPrivacy failed, resulting in potential data leakage.
 Please press *OK* to send me the support information so I can look into it.
 
 <a name="FAQ9"></a>
 **(9) What is the procedure to update a ROM?**
 
-Assuming you don't wish to wipe data, and that Xposed and XPrivacy are already installed before updating the ROM, the best procedure to update a ROM is:
+Assuming you don't wish to wipe data, and that Xposed and EBXPrivacy are already installed before updating the ROM, the best procedure to update a ROM is:
 
-1. Export XPrivacy settings
+1. Export EBXPrivacy settings
 1. Enable airplane/flight mode
-1. Use the menu option in XPrivacy to clear all data
+1. Use the menu option in EBXPrivacy to clear all data
 1. Reboot to recovery
 1. Flash ROM
 1. Flash Google apps (optional)
 1. Re-activate Xposed using [Xposed toggle](http://forum.xda-developers.com/showpost.php?p=45188739)
 1. Reboot to Android
 1. Restore the android ID (when needed. For example, with [Titanium backup](https://play.google.com/store/apps/details?id=com.keramidas.TitaniumBackup))
-1. Import XPrivacy settings
+1. Import EBXPrivacy settings
 1. Disable airplane/flight mode
 1. Fake the network type (Wi-Fi, mobile)
 
 If you skip the export, clear, or import steps above, some system applications can end up with the wrong restrictions because the ROM update might have changed these applications' UID's.
 
-To import and export XPrivacy's data, you need a [pro license](http://www.xprivacy.eu/).
+To import and export EBXPrivacy's data, you need a [pro license](http://www.xprivacy.eu/).
 
 <a name="FAQ10"></a>
 **(10) Can I restrict root access?**
@@ -621,17 +621,17 @@ An example is [Android Terminal Emulator](https://play.google.com/store/apps/det
 Changes to restrictions may require up to 15 seconds to take effect because of caching. Changing internet and storage restrictions requires restarting the application. Please note that in many cases pressing *back* within target applications merely moves the application to the background.
 
 <a name="FAQ12"></a>
-**(12) Does XPrivacy include a firewall?**
+**(12) Does EBXPrivacy include a firewall?**
 
-You can restrict internet access for any application. But if you want to partly enable internet, for example for Wi-Fi only, you will have to use a firewall application, such as [AFWall+](http://forum.xda-developers.com/showthread.php?t=1957231). XPrivacy works within Android,
+You can restrict internet access for any application. But if you want to partly enable internet, for example for Wi-Fi only, you will have to use a firewall application, such as [AFWall+](http://forum.xda-developers.com/showthread.php?t=1957231). EBXPrivacy works within Android,
 and detailed firewall rules can only be applied within the Linux kernel.
 
-The latest versions of XPrivacy allow you to white and black list IP addresses and host names.
+The latest versions of EBXPrivacy allow you to white and black list IP addresses and host names.
 
 <a name="FAQ13"></a>
 **(13) What does the "Unable to parse package." message mean?**
 
-This means XPrivacy's apk file is corrupt. Try disabling your popup blocker or downloading using another device.
+This means EBXPrivacy's apk file is corrupt. Try disabling your popup blocker or downloading using another device.
 
 <a name="FAQ14"></a>
 **(14) How do I make a logcat?**
@@ -641,7 +641,7 @@ but logcats captured this way are not always sufficient. The best way to capture
 
 * Install the [Android SDK](http://developer.android.com/sdk/index.html) (Click *Download for other platforms* for a minimal download)
 * Make sure you can connect to your device via USB (see [here](http://developer.android.com/sdk/win-usb.html) for drivers and instructions)
-* **Enable XPrivacy debug logging in the main settings**
+* **Enable EBXPrivacy debug logging in the main settings**
 * Power off your device
 * Start logging by entering this command in the command line: *adb logcat >log.txt*
 * Power on your device
@@ -658,9 +658,9 @@ and link to it from the issue you created.
 Don't forget to mention the *UID* of the application to look into, when relevant.
 
 <a name="FAQ15"></a>
-**(15) Where does XPrivacy store its settings?**
+**(15) Where does EBXPrivacy store its settings?**
 
-XPrivacy's restrictions, settings, and usage data are stored in an sqlite3 database in this folder:
+EBXPrivacy's restrictions, settings, and usage data are stored in an sqlite3 database in this folder:
 
 ```
 /data/system/xprivacy
@@ -674,7 +674,7 @@ In the application details view, it will. In the main list view, you are protect
 <a name="FAQ17"></a>
 **(17) How can I export/import my settings?**
 
-You need a [pro license](http://www.xprivacy.eu/) to import your settings. Exported settings are stored in the folder *.xprivacy* in the file *XPrivacy.xml*. You can copy this file to the same place on any other device. When importing, settings are only applied to user and system applications that actually exist on both devices.
+You need a [pro license](http://www.xprivacy.eu/) to import your settings. Exported settings are stored in the folder *.xprivacy* in the file *EBXPrivacy.xml*. You can copy this file to the same place on any other device. When importing, settings are only applied to user and system applications that actually exist on both devices.
 
 The export file will contain all restrictions and settings, but note that allowed accounts and contacts (not the accounts and contacts themselves) can only be imported when the Android ID is the same.
 
@@ -683,14 +683,14 @@ Also see the [above FAQ](#FAQ9) about what to do when updating your ROM.
 <a name="FAQ18"></a>
 **(18) Why does a GPS status icon still appear after I have restricted locations?**
 
-This is by design. XPrivacy only replaces the real location with a fake location. It even uses the real location to randomize the fake location. The idea is that everything should appear as normal as possible to an application.
+This is by design. EBXPrivacy only replaces the real location with a fake location. It even uses the real location to randomize the fake location. The idea is that everything should appear as normal as possible to an application.
 
 See [here](http://forum.xda-developers.com/showpost.php?p=57417209&postcount=13097) for some addtional details.
 
 <a name="FAQ19"></a>
 **(19) How about multi-user support?**
 
-Secondary users can install and use XPrivacy the same way as the primary user.
+Secondary users can install and use EBXPrivacy the same way as the primary user.
 The primary user cannot manage the restrictions of secondary users.
 This is because Android totally separates the environments of the users
 (which is a good thing, from a security perspective).
@@ -714,19 +714,19 @@ Because some Google components are not installed.
 No, root is only required to install Xposed one time.
 
 <a name="FAQ22"></a>
-**(22) Why isn't XPrivacy available in the Google Play Store anymore?**
+**(22) Why isn't EBXPrivacy available in the Google Play Store anymore?**
 
 Because Google removed it. Read the explanation [here](http://forum.xda-developers.com/showpost.php?p=44427089&postcount=2433).
 
 <a name="FAQ23"></a>
 **(23) What is "Template" used for?**
 
-XPrivacy uses the default template to apply restrictions to newly installed applications. Templates can also be used when you select "*Apply template*" from the menu inside the application detail view.
+EBXPrivacy uses the default template to apply restrictions to newly installed applications. Templates can also be used when you select "*Apply template*" from the menu inside the application detail view.
 
 <a name="FAQ24"></a>
 **(24) Will there be iOS or Windows Phone versions?**
 
-No. Because they are not open source, it's too difficult to implement something like XPrivacy on these OS's.
+No. Because they are not open source, it's too difficult to implement something like EBXPrivacy on these OS's.
 
 <a name="FAQ25"></a>
 **(25) Will you restrict...?**
@@ -772,14 +772,14 @@ Note that the user selector on the lockscreen works in landscape only.
 
 Android permissions cover only a part of the functions that leak privacy-sensitive information.
 Revoking permissions will make quite a few applications unusable/crash.
-XPrivacy feeds applications with fake or no data, which keeps most applications working.
-In other words, XPrivacy is not a permission manager, but a privacy manager.
+EBXPrivacy feeds applications with fake or no data, which keeps most applications working.
+In other words, EBXPrivacy is not a permission manager, but a privacy manager.
 If you need a permission manager, there are several Xposed modules that offer this functionality.
 
 <a name="FAQ27"></a>
-**(27) Does XPrivacy work with SELinux (Fort Knox)?**
+**(27) Does EBXPrivacy work with SELinux (Fort Knox)?**
 
-Yes, I develop XPrivacy on a device with SELinux in restrictive mode.
+Yes, I develop EBXPrivacy on a device with SELinux in restrictive mode.
 
 <a name="FAQ28"></a>
 **(28) How does the tri-state check box work?**
@@ -797,30 +797,30 @@ Note: By default, categories and functions are filtered by permission, so you ma
 
 Inspect the application's usage view, via the main menu item *Usage data* to see which restrictions were enforced.
 Restrict and unrestrict one by one until you have found which one causes the application to force close.
-Wait 15 seconds after each change to let the XPrivacy cache time-out.
+Wait 15 seconds after each change to let the EBXPrivacy cache time-out.
 Help others by submitting your working set of restrictions.
 
 See also [this FAQ item](#FAQ63).
 
 <a name="FAQ31"></a>
-**(31) Can XPrivacy handle non-Java applications?**
+**(31) Can EBXPrivacy handle non-Java applications?**
 
-In general, due to Android's isolated virtual machine architecture, calls to native libraries and binaries are via Java and so XPrivacy can restrict them. XPrivacy can cover any route to a native library or binary.
+In general, due to Android's isolated virtual machine architecture, calls to native libraries and binaries are via Java and so EBXPrivacy can restrict them. EBXPrivacy can cover any route to a native library or binary.
 
-XPrivacy cannot hook into native libraries, but can prevent native libraries from loading. This can break applications such as Facebook, but can prevent malware from doing its work.
+EBXPrivacy cannot hook into native libraries, but can prevent native libraries from loading. This can break applications such as Facebook, but can prevent malware from doing its work.
 
-XPrivacy can also restrict access to the Linux shell (including superuser) to prevent native binaries from running. You can find these restrictions in the *Shell* category.
+EBXPrivacy can also restrict access to the Linux shell (including superuser) to prevent native binaries from running. You can find these restrictions in the *Shell* category.
 
-Starting with version 2.0, XPrivacy can protect against direct interprocess communication (IPC).
+Starting with version 2.0, EBXPrivacy can protect against direct interprocess communication (IPC).
 
 <a name="FAQ32"></a>
 **(32) Why do I see data usage when an application does not have the corresponding Android permission?**
 
-Many functions do not require Android permissions, so this is quite normal. Sometimes an application tries to access a function for which it doesn't have an Android permission. Since XPrivacy usually runs prior to the function, such access will be noted.
+Many functions do not require Android permissions, so this is quite normal. Sometimes an application tries to access a function for which it doesn't have an Android permission. Since EBXPrivacy usually runs prior to the function, such access will be noted.
 
 If you filter on permissions, and an application tries to use a function without having permission, the application will still be shown.
 
-If you think a function requires permissions while XPrivacy shows it doesn't, please report it.
+If you think a function requires permissions while EBXPrivacy shows it doesn't, please report it.
 
 <a name="FAQ33"></a>
 **(33) How can I restrict the hardware, external MAC, IP, and IMEI number?**
@@ -829,7 +829,7 @@ You can restrict the (internal) IP and MAC addresses and IMEI number for any app
 
 The external IP is assigned by your provider and cannot be changed. You could use a [VPN](http://en.wikipedia.org/wiki/Virtual_private_network) or [TOR](http://en.wikipedia.org/wiki/Tor_\(anonymity_network\)) to hide your external IP to a certain extent.
 
-The hardware MAC address can be changed on some devices, but this is device-dependent and can only be done at the driver or kernel level. XPrivacy only works on the Android level and is device-independent.
+The hardware MAC address can be changed on some devices, but this is device-dependent and can only be done at the driver or kernel level. EBXPrivacy only works on the Android level and is device-independent.
 
 The same applies to the IMEI number, additionally complicated by legal issues in most countries.
 
@@ -866,7 +866,7 @@ The pro license fetcher needs the Google Play Store/services for fetching a pro 
 <a name="FAQ38"></a>
 **(38) What does the update service do?**
 
-The update services runs after upgrading XPrivacy and after each boot.
+The update services runs after upgrading EBXPrivacy and after each boot.
 It takes care of migrating settings, randomization of fake data, and upgrading settings for new versions.
 
 <a name="FAQ46"></a>
@@ -880,7 +880,7 @@ To prevent a malicious application author from automatically submitting many *al
 It is an acronym for **I**nter-**P**rocess **C**ommunication. See [here](http://forum.xda-developers.com/showpost.php?p=50274730&postcount=7006) and [here](http://forum.xda-developers.com/showpost.php?p=50352683&postcount=7206) for more information.
 
 <a name="FAQ48"></a>
-**(48) Can XPrivacy be detected by other application?**
+**(48) Can EBXPrivacy be detected by other application?**
 
 Yes, but I don't see this as a problem,
 since [security through obscurity](http://en.wikipedia.org/wiki/Security_through_obscurity) is not a good principle.
@@ -891,21 +891,21 @@ since [security through obscurity](http://en.wikipedia.org/wiki/Security_through
 Things to do / check:
 
 * Ensure the Xposed framework is (still) installed using the Xposed installer
-* Ensure the XPrivacy application is stored on the internal storage and not moved to the SD-card or somewhere else
+* Ensure the EBXPrivacy application is stored on the internal storage and not moved to the SD-card or somewhere else
 	* Fairphone users, see [here](https://fairphone.zendesk.com/hc/en-us/articles/201154666-How-can-I-see-all-the-different-places-where-information-is-stored-on-my-phone-SD-Card-Internal-Storage-and-Phone-Storage-)
 * Ensure LBE Security Master is not installed (disabling is not enough)
 * Ensure the security center of MIUI is disabled (see [here](http://forum.xda-developers.com/showpost.php?p=55810186&postcount=12178))
-* In the Xposed installer, disable XPrivacy, wait a few seconds, and then enable it again. Then reboot.
+* In the Xposed installer, disable EBXPrivacy, wait a few seconds, and then enable it again. Then reboot.
 * Clear the (Dalvik) cache using the device's recovery
 
-The most common problem seems to be the storage location of the XPrivacy application.
+The most common problem seems to be the storage location of the EBXPrivacy application.
 
 If these suggestions don't help, please create an issue and provide a logcat (see [*Support*](#support)).
 
 <a name="FAQ50"></a>
 **(50) Do you have suggestions about additional privacy-related software?**
 
-IMHO, in addition to XPrivacy, you should at least install an ad blocker and a firewall:
+IMHO, in addition to EBXPrivacy, you should at least install an ad blocker and a firewall:
 * [AdAway](http://sufficientlysecure.org/index.php/adaway/) ([source code](https://github.com/dschuermann/ad-away))
 * [AFWall+](https://play.google.com/store/apps/details?id=dev.ukanth.ufirewall) ([source code](https://github.com/ukanth/afwall))
 
@@ -925,7 +925,7 @@ It turns all restrictions for the application on or off, but still allows you to
 <a name="FAQ52"></a>
 **(52) Why was my issue closed?**
 
-I have really spent a lot of time developing XPrivacy and I am happy to look into any issue,
+I have really spent a lot of time developing EBXPrivacy and I am happy to look into any issue,
 but I am asking you to properly document your issue.
 *It doesn't work* or *it crashes* is not sufficient!
 So, please *help me help you* by describing the exact steps to reproduce the problem and/or provide a logcat.
@@ -933,9 +933,9 @@ So, please *help me help you* by describing the exact steps to reproduce the pro
 See [*Support*](#support) for more details.
 
 <a name="FAQ53"></a>
-**(53) What happens if I make XPrivacy a device administrator?**
+**(53) What happens if I make EBXPrivacy a device administrator?**
 
-This will ensure that other applications cannot uninstall XPrivacy without your knowledge.
+This will ensure that other applications cannot uninstall EBXPrivacy without your knowledge.
 
 <a name="FAQ54"></a>
 **(54) Why do exporting and importing take so long?**
@@ -954,7 +954,7 @@ and then to select only these applications using the action bar *select all* (fi
 
 For devices with a custom recovery (TWRP/CWM) you can flash the [Xposed-Disabler-Recovery.zip](http://forum.xda-developers.com/attachment.php?attachmentid=2568891&d=1391958634). Alternatively, (on most devices) press the volume down button 5 times during boot (there will be a vibration with each press when done correctly).
 
-See [here](https://github.com/M66B/XPrivacy/blob/master/DATABASE.md#xprivacydb) on how to enable debug logging without XPrivacy activated in Xposed.
+See [here](https://github.com/M66B/EBXPrivacy/blob/master/DATABASE.md#xprivacydb) on how to enable debug logging without EBXPrivacy activated in Xposed.
 
 <a name="FAQ57"></a>
 **(57) How does *Expert mode* work?**
@@ -971,17 +971,17 @@ Expert mode has the following sub-options which can be toggled individually:
 	* Used to fix some application compatibility issues or to enable special or expert features
 		* *freeze*: show the on demand restriction dialog, even if there is the possibility it will freeze
 		* *resolve*, *noresolve*: enable/disable resolving IP addresses to names for usage data / on demand restricting
-		* *test*: allow the XPrivacy update checker to also check for test versions
+		* *test*: allow the EBXPrivacy update checker to also check for test versions
 		* *safemode*: hide unsafe function restrictions
 * *Clear cache* will clear settings and restrictions caches for all applications and the privacy service
 * *Clear all data* will erase **all** settings and restrictions. Use with care!
 
 <a name="FAQ58"></a>
-**(58) Can I write a thesis about XPrivacy?**
+**(58) Can I write a thesis about EBXPrivacy?**
 
 Yes, you can. I will even help you with it.
 However, I will not write or review code or text for you. Nevertheless, I will try to answer any questions you have.
-XPrivacy is open source (see the [license](#license)) and all code you write needs to be contributed back to the project.
+EBXPrivacy is open source (see the [license](#license)) and all code you write needs to be contributed back to the project.
 To help you, I want to see an e-mail from your professor with a confirmation he or she has read and agrees to this README.
 
 <a name="FAQ59"></a>
@@ -1002,7 +1002,7 @@ You can swipe away the notification after you have seen it.
 Unfortunately this is not possible.
 The on demand restricting dialog is holding up system processes, 
 and Android may reboot automatically if too much time has passed without a response.
-Recent versions of XPrivacy have a reset button; use at your own risk.
+Recent versions of EBXPrivacy have a reset button; use at your own risk.
 
 <a name="FAQ62"></a>
 **(62) How can I 'toggle' multiple applications?**
@@ -1020,16 +1020,16 @@ There is one exception to this: exporting will be done for all applications by d
 since the export is intended to be a full backup.
 
 <a name="FAQ63"></a>
-**(63) How can I troubleshoot an issue believed to be caused by XPrivacy?**
+**(63) How can I troubleshoot an issue believed to be caused by EBXPrivacy?**
 
-* Always make sure you have a backup (XPrivacy export, or nandroid)
+* Always make sure you have a backup (EBXPrivacy export, or nandroid)
 * Most issues are caused by a "bad" restriction, so try to reproduce the issue and check the main usage data
-* Verify that the issue is actually caused by XPrivacy
+* Verify that the issue is actually caused by EBXPrivacy
 	* Turn on airplane/flight mode
-	* Disable XPrivacy in the Xposed installer (don't forget to reboot)
-	* Check if the issue is still present; if yes, XPrivacy is not causing the issue
+	* Disable EBXPrivacy in the Xposed installer (don't forget to reboot)
+	* Check if the issue is still present; if yes, EBXPrivacy is not causing the issue
 * Finding the culprit:
-	* Clear all XPrivacy restrictions (don't forget to reboot)
+	* Clear all EBXPrivacy restrictions (don't forget to reboot)
 	* Check if the issue is still present
 	* Import half of your restrictions, check if the issue is still present
 	* If yes, clear again and import only half of these restrictions
@@ -1045,7 +1045,7 @@ On older or customized ROMs, the on demand dialog is almost always shown,
 except sometimes for the functions *inet*, *sdcard* and *media*,
 and sometimes for restrictions triggered by the hardware buttons (for example, the volume buttons).
 This is to prevent the on demand dialog from freezing (locking up), caused by an internal Android lock.
-This freeze cannot be fixed by XPrivacy.
+This freeze cannot be fixed by EBXPrivacy.
 
 If you want to have the on demand dialog always shown, then you can add the *quirk* "freeze".
 
@@ -1118,7 +1118,7 @@ With Tasker, you can create shortcuts on your homescreen:
 * Create a shortcut on your homescreen (launcher)
 * Choose shortcut: "Task Shortcut" (launcher)
 * Task Selection: "your_usage_data_task" (Tasker)
-* Task Shortcut Icon: tap the *Image Select* button (lower right) and choose an icon (for example the XPrivacy icon) (Tasker)
+* Task Shortcut Icon: tap the *Image Select* button (lower right) and choose an icon (for example the EBXPrivacy icon) (Tasker)
 * Create icon: tap the back button to finish creating the shortcut (Tasker)
 
 <a name="FAQ67"></a>
@@ -1144,14 +1144,14 @@ Unsafe restrictions can be disabled by removing the Xposed method hook using a n
 See [here](https://github.com/cernekee/WinXP) for a proof of concept.
 You can prevent this by not allowing native libaries to load, which will, unfortunately, often result in a crash.
 
-XPrivacy 3 does partly address this problem for [vanilla Android KitKat](https://source.android.com/)
+EBXPrivacy 3 does partly address this problem for [vanilla Android KitKat](https://source.android.com/)
 and some other frequently used ROMs (see below).
 This is done by hooking into the Android counterparts of the user space functions.
 Unfortunately, not all user space functions have an Android counterpart,
 meaning that this cannot be done for all restrictions.
-Nevertheless, the most sensitive data, like contacts and your location, can safely be protected by XPrivacy 3.
+Nevertheless, the most sensitive data, like contacts and your location, can safely be protected by EBXPrivacy 3.
 
-*XPrivacy 3 modes*
+*EBXPrivacy 3 modes*
 
 * AOSP mode = vanilla (Google) Android KitKat or:
 	* [OmniROM](http://omnirom.org/)
@@ -1168,25 +1168,25 @@ Nevertheless, the most sensitive data, like contacts and your location, can safe
 * AOSP mode = vanilla (Google) Android Lollipop
 * Compatibility mode = all other Android versions/variants
 
-*About* will show if XPrivacy 3 is running in compatibility mode, which means XPrivacy 3 is behaving as XPrivacy 2.
-If there is no message about compatibility mode, XPrivacy 3 is running in AOSP mode.
-XPrivacy 3 will always run in compatibility mode on Android versions before KitKat.
+*About* will show if EBXPrivacy 3 is running in compatibility mode, which means EBXPrivacy 3 is behaving as EBXPrivacy 2.
+If there is no message about compatibility mode, EBXPrivacy 3 is running in AOSP mode.
+EBXPrivacy 3 will always run in compatibility mode on Android versions before KitKat.
 
-You can force XPrivacy 3 into AOSP mode using the main settings.
+You can force EBXPrivacy 3 into AOSP mode using the main settings.
 This will work on Lollipop when SELinux is disabled, or in permissive mode, or if you add this build property:
 
 ```
 xprivacy.options=ignoreselinux
 ```
 
-There is no need to force AOSP mode if XPrivacy recognizes your ROM as a compatible ROM.
+There is no need to force AOSP mode if EBXPrivacy recognizes your ROM as a compatible ROM.
 
 If you force AOSP mode, privacy-sensitive data may leak.
-XPrivacy has many internal checks, so if something is going wrong,
+EBXPrivacy has many internal checks, so if something is going wrong,
 you will probably sooner or later get a debug info popup.
 
-For the benefit of others, please report if XPrivacy 3 works for the ROM you are using
-(also post a screenshot of the *About* of XPrivacy, so I can see how the ROM is recognized).
+For the benefit of others, please report if EBXPrivacy 3 works for the ROM you are using
+(also post a screenshot of the *About* of EBXPrivacy, so I can see how the ROM is recognized).
 
 <a name="FAQ69"></a>
 **(69) What do the state colors mean, and when do they change?**
@@ -1194,19 +1194,19 @@ For the benefit of others, please report if XPrivacy 3 works for the ROM you are
 * **Grey**: three cases:
      1. after clearing restrictions for an application
      1. after setting any restriction for an application
-     1. after you perform an XPrivacy import
+     1. after you perform an EBXPrivacy import
 * **Orange**: four cases:
      1. application is new
      1. application is updated
      1. after you delete all regular (not on demand) restrictions for an application
-     1. after you fetch restrictions from the crowd sourced XPrivacy server for an application
-* **Green**: after you submit restriction changes to the crowd sourced XPrivacy server for an application
+     1. after you fetch restrictions from the crowd sourced EBXPrivacy server for an application
+* **Green**: after you submit restriction changes to the crowd sourced EBXPrivacy server for an application
 
 <a name="FAQ70"></a>
 **(70) Why do I get a '429 Too Many Requests' message?**
 
 This can happen when checking for updates using the main menu.
-Everybody can download a new version of XPrivacy five times in 12 hours.
+Everybody can download a new version of EBXPrivacy five times in 12 hours.
 After this limit, you will get '*429 Too Many Requests*'.
 This is to limit the bandwidth of the server to acceptable levels.
 Simply wait 12 hours after the last download, and you can download again.
@@ -1215,16 +1215,16 @@ Please note that I will not make exceptions to this, because the limit is there 
 <a name="FAQ71"></a>
 **(71) Why don't I see the changelog**
 
-Make sure you have an internet connection and that XPrivacy has internet access (check your firewall).
-The changelog is an in-app display of [this page](https://github.com/M66B/XPrivacy/blob/master/CHANGELOG.md)
+Make sure you have an internet connection and that EBXPrivacy has internet access (check your firewall).
+The changelog is an in-app display of [this page](https://github.com/M66B/EBXPrivacy/blob/master/CHANGELOG.md)
 
 <a name="FAQ72"></a>
-**(72) Can you make XPrivacy available on F-Droid, Amazon, or other stores/repositories?**
+**(72) Can you make EBXPrivacy available on F-Droid, Amazon, or other stores/repositories?**
 
-I don't want to publish XPrivacy in dozens of places, because it is extra work that doesn't add any value.
+I don't want to publish EBXPrivacy in dozens of places, because it is extra work that doesn't add any value.
 The current download locations,
 the [Xposed repo](http://repo.xposed.info/module/edu.umbc.cs.ebiquity.mithril.xprivacy)
-and [GitHub](https://github.com/M66B/XPrivacy/releases),
+and [GitHub](https://github.com/M66B/EBXPrivacy/releases),
 should be accessible to almost everybody.
 
 [F-Droid](https://f-droid.org/) also doesn't allow me to sign the APK with my own signature.
@@ -1232,16 +1232,16 @@ should be accessible to almost everybody.
 <a name="FAQ74"></a>
 **(74) Why do I not see a specific application in the application list?**
 
-XPrivacy allows you to restrict each and every application.  XPrivacy even allows you to restrict
+EBXPrivacy allows you to restrict each and every application.  EBXPrivacy even allows you to restrict
 itself as well as core Android system components, although there are a few [limitations](#limitations).
-These limitations are for your own safety (for example, to prevent a bootloop or to keep XPrivacy usable in all circumstances).
+These limitations are for your own safety (for example, to prevent a bootloop or to keep EBXPrivacy usable in all circumstances).
 
 The application you are searching for is most likely filtered, for example because it is a system application.
 You can change the filters by using the main menu *Filter*.
 By default, system applications and applications without permissions for the selected category are filtered.
 
 Some applications (components) share data, which means they share the same UID.
-These applications are shown only once in XPrivacy (this cannot be changed).
+These applications are shown only once in EBXPrivacy (this cannot be changed).
 An example is the Dolphin browser and its plugins/addons.
 
 <a name="FAQ76"></a>
@@ -1254,7 +1254,7 @@ Please read [here](http://forum.xda-developers.com/xposed/modules/xprivacy-ultim
 
 * Make sure that the license file name and contents were not altered while downloading the file (for example, by a virus scanner or your e-mail client). The **most common problem** is that some e-mail clients rename the file.
 * Make sure that you have put the license file into the root folder of the SD-card (this is the folder you will see when you connect your Android device to a PC).
-* After starting XPrivacy, the license file will be imported, which means the license file will be removed from the root folder of the SD-card, and that the about dialog will show *Licensed*.
+* After starting EBXPrivacy, the license file will be imported, which means the license file will be removed from the root folder of the SD-card, and that the about dialog will show *Licensed*.
 
 If your device doesn't have an SD-card, you will need to put the license file into the root folder of the external storage folder.
 This is the folder you will see if you connect your Android device to a PC. When in doubt, you can use the menu *Help*, *About* to see the correct folder name.
@@ -1268,7 +1268,7 @@ This message basically means that the Google Play Store thinks you didn't pay fo
 
 Please make sure you are using the original Google Play Store application, and that the Google Play Store and Google Play services have internet access (mind your firewall).
 Make sure you are not using *Lucky Patcher*, *Freedom*, or similar applications.
-Also make sure you didn't restrict the Google Play Store, Google Play services, or Pro License Fetcher using XPrivacy.
+Also make sure you didn't restrict the Google Play Store, Google Play services, or Pro License Fetcher using EBXPrivacy.
 
 Start the Google Play Store and wait about a minute so it can synchronize with the Google servers.
 
@@ -1282,7 +1282,7 @@ By creating this file:
 */data/system/xprivacy/disabled*
 
 Each line should either contain a category name or a category name and function name separated by a slash (/).
-See [here](https://github.com/M66B/XPrivacy/blob/master/src/biz/bokhorst/xprivacy/Meta.java#L47) for the correct category and function names.
+See [here](https://github.com/M66B/EBXPrivacy/blob/master/src/biz/bokhorst/xprivacy/Meta.java#L47) for the correct category and function names.
 
 If SELinux is restrictive, you need to add this build property:
 
@@ -1293,8 +1293,8 @@ xprivacy.options=ignoreselinux
 <a name="FAQ80"></a>
 **(80) Why do I get 'Privacy service version mismatch' error?**
 
-When installed, XPrivacy has two parts: the Xposed module part and the application part. This error means the Xposed module part and the application part have different version numbers.
-If a reboot doesn't solve this problem, try disabling and then enabling XPrivacy in the Xposed installer, and reboot again.
+When installed, EBXPrivacy has two parts: the Xposed module part and the application part. This error means the Xposed module part and the application part have different version numbers.
+If a reboot doesn't solve this problem, try disabling and then enabling EBXPrivacy in the Xposed installer, and reboot again.
 
 <a name="FAQ81"></a>
 **(81) Why does restricting a category not restrict all of its functions?  What are 'dangerous' functions?**
@@ -1332,14 +1332,14 @@ Support
 
 It is okay to use my personal or XDA e-mail for things that cannot be shared in public, such as security reports.
 
-**There is only support for official XPrivacy releases.**
+**There is only support for official EBXPrivacy releases.**
 
 **There is no support for versions prior to the latest stable release.**
 
 It is already enough work to support the latest stable official version.
 
-There is no support for XPrivacy on Ice Cream Sandwich (ICS) or Jelly Bean anymore. 
-There is limited support for XPrivacy on KitKat.
+There is no support for EBXPrivacy on Ice Cream Sandwich (ICS) or Jelly Bean anymore. 
+There is limited support for EBXPrivacy on KitKat.
 Limited support means I will try to fix bugs, but only if it doesn't take much time.
 
 **I will not look into issues of applications that cost money or have root access.**
@@ -1352,10 +1352,10 @@ Please check [the limitations](#limitations) before reporting a bug, requesting 
 
 **First ask if other people have encountered the same bug!** (see questions below)
 
-If you encounter a bug, please [create an issue](https://github.com/M66B/XPrivacy/issues).
+If you encounter a bug, please [create an issue](https://github.com/M66B/EBXPrivacy/issues).
 
 Please describe the exact steps to reproduce the issue, including the wrong and expected result,
-and include information about your device type, and Android and XPrivacy versions.
+and include information about your device type, and Android and EBXPrivacy versions.
 
 To increase the chance I can find and fix the bug, please read [here](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html).
 
@@ -1366,15 +1366,15 @@ Therefore I will not look into long logcats anymore.
 
 **One bug report per issue please!**
 
-**Do not forget to enable XPrivacy debug logging using the settings menu!**
+**Do not forget to enable EBXPrivacy debug logging using the settings menu!**
 
-**Before submitting any issue, please make sure you are running the latest version of XPrivacy.**
+**Before submitting any issue, please make sure you are running the latest version of EBXPrivacy.**
 
-**Before submitting any issue, please make sure XPrivacy is causing the problem by temporarily disabling XPrivacy and seeing if that resolves the issue.**
+**Before submitting any issue, please make sure EBXPrivacy is causing the problem by temporarily disabling EBXPrivacy and seeing if that resolves the issue.**
 
 #### Feature requests
 
-If you have a feature request, please [create an issue](https://github.com/M66B/XPrivacy/issues).
+If you have a feature request, please [create an issue](https://github.com/M66B/EBXPrivacy/issues).
 
 New features are only considered for implementation when requested on GitHub with a detailed description of the feature and only if there are ten +1's within two weeks.
 You can promote your feature request on XDA, but for a maximum of two times only. Feature requests promoted more than two times will be closed and not be considered for implementation anymore.
@@ -1382,14 +1382,14 @@ See [here](http://forum.xda-developers.com/showpost.php?p=51574315&postcount=877
 
 Please read [here](http://forum.xda-developers.com/showpost.php?p=52644313&postcount=9241) before voting.
 
-Implementation of new features is dependent on contributions to the XPrivacy project.
+Implementation of new features is dependent on contributions to the EBXPrivacy project.
 Please read [here](http://forum.xda-developers.com/xposed/modules/xprivacy-ultimate-android-privacy-app-t2320783/post57469136#post57469136) for more information.
 
 **One feature request per issue please!**
 
 #### Questions
 
-If you have any questions, please leave a message in the [XDA XPrivacy  thread](http://forum.xda-developers.com/showthread.php?p=42488236).
+If you have any questions, please leave a message in the [XDA EBXPrivacy  thread](http://forum.xda-developers.com/showthread.php?p=42488236).
 More people follow the support thread than the GitHub issue tracker, which increases your chance of receiving a helpful answer.
 Moreover, the answers given might be beneficial to more people than you alone.
 
@@ -1405,7 +1405,7 @@ GitHub issues are for bug reports and feature requests.
 Changelog
 ---------
 
-The changelog is [here](https://github.com/M66B/XPrivacy/blob/master/CHANGELOG.md).
+The changelog is [here](https://github.com/M66B/EBXPrivacy/blob/master/CHANGELOG.md).
 
 Similar Solutions
 -----------------
@@ -1420,7 +1420,7 @@ Similar Solutions
 * [SRT AppGuard](http://www.srt-appguard.com/en/)
 * [DonkeyGuard](http://forum.xda-developers.com/showthread.php?t=2831556)
 
-The *PDroid* family provides fake or no data, more or less in the same way as XPrivacy does.
+The *PDroid* family provides fake or no data, more or less in the same way as EBXPrivacy does.
 A difference is that you need to patch Android and that there is (therefore) only limited stock ROM support.
 The PDroid family is open source. The *PDroid* family is not supported anymore.
 
@@ -1428,7 +1428,7 @@ The PDroid family is open source. The *PDroid* family is not supported anymore.
 LBE Privacy Guard also features malware protection and data traffic control.
 Some consider the closed source code of Chinese origin to be a problem.
 
-The members of the PDroid family and XPrivacy hardly use any memory, but LBE Privacy Guard does.
+The members of the PDroid family and EBXPrivacy hardly use any memory, but LBE Privacy Guard does.
 
 The *CyanogenMod Incognito Mode* seems not to be fine grained and provides only privacy for personal data,
 like contacts, if the associated content provider chooses to do so.
@@ -1440,35 +1440,35 @@ The *Android 4.3+ Permission Manager* is like *CyanogenMod Incognito Mode*.
 
 *SRT AppGuard* does not require root, and therefore revokes permissions by uninstalling the application to be monitored
 and reinstalling a modified version. Without a backup, application data will be lost in this process.
-Compared to XPrivacy, permission control is not as fine grained and comprehensive.
+Compared to EBXPrivacy, permission control is not as fine grained and comprehensive.
 System applications cannot be restricted.
 
 After over a year of silence, the author of PDroid 2.0 released *DonkeyGuard*.
 *DonkeyGuard* is not open source.
 
-XPrivacy can restrict more data than any of the above solutions,
+EBXPrivacy can restrict more data than any of the above solutions,
 even for closed source applications and libraries, like Google Play services.
-Unlike any other solution, XPrivacy has [crowd sourced restrictions](http://crowd.xprivacy.eu/).
+Unlike any other solution, EBXPrivacy has [crowd sourced restrictions](http://crowd.xprivacy.eu/).
 
-I do not recommend using XPrivacy in combination with any of the similar solutions; this could result in conflicts and potential data leaks.
+I do not recommend using EBXPrivacy in combination with any of the similar solutions; this could result in conflicts and potential data leaks.
 
-I need all my time developing XPrivacy, so I will not test XPrivacy alongside any of the similar solutions.
-If you test XPrivacy alongside any of the similar solutions, you can probably help others by reporting your test results.
+I need all my time developing EBXPrivacy, so I will not test EBXPrivacy alongside any of the similar solutions.
+If you test EBXPrivacy alongside any of the similar solutions, you can probably help others by reporting your test results.
 
 <a name="news"></a>In The Media
 ------------
 
-* [Manage Individual App Permissions with XPrivacy - XDA Developer](http://www.xda-developers.com/android/manage-individual-app-permissions-with-xprivacy/) (June 20, 2013)
-* [XPrivacy Gives You Massive Control Over What Your Installed Apps Are Allowed To Do - Android Police](http://www.androidpolice.com/2013/06/23/xprivacy-gives-you-massive-control-over-what-your-installed-apps-are-allowed-to-do/) (June 23, 2013)
-* [Protect Your Privacy with XPrivacy - XDA Developer TV](http://www.xda-developers.com/android/protect-your-privacy-with-xprivacy-xda-developer-tv/) (July 17, 2013)
+* [Manage Individual App Permissions with EBXPrivacy - XDA Developer](http://www.xda-developers.com/android/manage-individual-app-permissions-with-xprivacy/) (June 20, 2013)
+* [EBXPrivacy Gives You Massive Control Over What Your Installed Apps Are Allowed To Do - Android Police](http://www.androidpolice.com/2013/06/23/xprivacy-gives-you-massive-control-over-what-your-installed-apps-are-allowed-to-do/) (June 23, 2013)
+* [Protect Your Privacy with EBXPrivacy - XDA Developer TV](http://www.xda-developers.com/android/protect-your-privacy-with-xprivacy-xda-developer-tv/) (July 17, 2013)
 * [Black Duck Announces Open Source Rookies of the Year Winners - Black Duck Software](http://www.blackducksoftware.com/news/releases/black-duck-announces-open-source-rookies-year-winners) (January 28, 2014)
 * [The Open Source Rookies of the Year Awards - InfoWorld](http://www.infoworld.com/d/open-source-software/the-open-source-rookies-of-the-year-awards-235116) (January 28, 2014)
-* [XPrivacy تطبيق](http://waleedhassan.wordpress.com/2014/01/31/xprivacy/) (January 31, 2014)
+* [EBXPrivacy تطبيق](http://waleedhassan.wordpress.com/2014/01/31/xprivacy/) (January 31, 2014)
 * [Out in the Open: How to Protect Your Secrets From Nosey Android Apps - Wired](http://www.wired.com/2014/03/x-privacy/) (March 31, 2014)
 * [Android privacy tool feeds fake data to prying apps - Wired UK](http://www.wired.co.uk/news/archive/2014-04/01/x-privacy-android-app) (April 1, 2014)
 * [Internet Vandaag](http://www.bnr.nl/radio/bnr-internet-vandaag/708487-1404/internet-vandaag-74) (April 7, 2014)
-* [Protecting Your Privacy: App Ops, Privacy Guard, and XPrivacy - XDA Developers](http://www.xda-developers.com/android/protecting-your-privacy-app-ops-privacy-guard-and-xprivacy/) (June 11, 2014)
-* [XPrivacy – Android ohne Google?! Teil6](http://www.kuketz-blog.de/xprivacy-android-ohne-google-teil6/) (September 23, 2014)
+* [Protecting Your Privacy: App Ops, Privacy Guard, and EBXPrivacy - XDA Developers](http://www.xda-developers.com/android/protecting-your-privacy-app-ops-privacy-guard-and-xprivacy/) (June 11, 2014)
+* [EBXPrivacy – Android ohne Google?! Teil6](http://www.kuketz-blog.de/xprivacy-android-ohne-google-teil6/) (September 23, 2014)
 
 Contributing
 ------------
@@ -1477,7 +1477,7 @@ Translations:
 
 * Translations to other languages are welcomed
 * Check if the language [is supported by Android](http://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android) and find its locale
-* Copy [this file](https://github.com/M66B/XPrivacy/blob/master/res/values/strings.xml) to the correct locale folder
+* Copy [this file](https://github.com/M66B/EBXPrivacy/blob/master/res/values/strings.xml) to the correct locale folder
 * Translate the strings in the copied file and omit all lines with **translatable="false"**
 * Create a [pull request](https://help.github.com/articles/using-pull-requests) for the new/updated translation
 * If you don't know how to create a pull request, you can send the translated file [via XDA PM](http://forum.xda-developers.com/member.php?u=2799345)
@@ -1529,8 +1529,8 @@ Current translations:
 Restrict new data:
 
 * Find the package/class/method that exposes the data (look into the Android documentation/sources)
-* Create a class that extends [XHook](https://github.com/M66B/XPrivacy/blob/master/src/biz/bokhorst/xprivacy/XHook.java)
-* Hook the methods in [XPrivacy](https://github.com/M66B/XPrivacy/blob/master/src/biz/bokhorst/xprivacy/XPrivacy.java)
+* Create a class that extends [XHook](https://github.com/M66B/EBXPrivacy/blob/master/src/biz/bokhorst/xprivacy/XHook.java)
+* Hook the methods in [EBXPrivacy](https://github.com/M66B/EBXPrivacy/blob/master/src/biz/bokhorst/xprivacy/EBXPrivacy.java)
 * Write a before and/or after method to restrict the data
 * Do a [pull request](https://help.github.com/articles/using-pull-requests) if you want to contribute
 
@@ -1545,13 +1545,13 @@ Using [Eclipse](http://www.eclipse.org):
 
 Testing:
 
-* [XPrivacy Tester](https://github.com/M66B/XPrivacyTester) (developers only)
+* [EBXPrivacy Tester](https://github.com/M66B/XPrivacyTester) (developers only)
 * [Elixir 2](https://play.google.com/store/apps/details?id=com.bartat.android.elixir)
 * [Network Info II](https://play.google.com/store/apps/details?id=aws.apps.networkInfoIi)
 
-The goal of the XPrivacy project is to provide a free and open source privacy solution for Android to as many as possible people.
+The goal of the EBXPrivacy project is to provide a free and open source privacy solution for Android to as many as possible people.
 
-To keep XPrivacy maintainable, hooking into private/internal classes and methods is undesirable,
+To keep EBXPrivacy maintainable, hooking into private/internal classes and methods is undesirable,
 since these vary considerably in different Android versions
 and are often customized/modified by manufacturers and custom ROM builders.
 
@@ -1559,14 +1559,14 @@ To prevent applications from crashing, fake data should be returned whenever pos
 Empty values (*null*) should not be replaced by fake values to prevent misuse.
 The same applies to creating new fake data (for example, an account).
 There is no need to apply restrictions in situations where the user is presented a dialog first (for example, to pick an account).
-Setting data (in contrast to getting data) should never be restricted; this is outside the goal of XPrivacy.
+Setting data (in contrast to getting data) should never be restricted; this is outside the goal of EBXPrivacy.
 
 Application-specific code is undesirable, because it could result in maintenance and support problems.
 
-XPrivacy is intended to restrict applications, but is not intended to restrict Android itself
+EBXPrivacy is intended to restrict applications, but is not intended to restrict Android itself
 (although this is often possible as a side effect).
 
-See [here](https://www.openhub.net/p/xprivacy/) for XPrivacy code metrics.
+See [here](https://www.openhub.net/p/xprivacy/) for EBXPrivacy code metrics.
 
 Please note that you agree to the license below by contributing, including the copyright.
 
@@ -1579,22 +1579,22 @@ Copyright (c) 2013-2015 Marcel Bokhorst ([M66B](http://forum.xda-developers.com/
 
 All rights reserved
 
-This file is part of XPrivacy.
+This file is part of EBXPrivacy.
 
-XPrivacy is free software: you can redistribute it and/or modify
+EBXPrivacy is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your discretion) any later version.
 
-XPrivacy is distributed in the hope that it will be useful,
+EBXPrivacy is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with XPrivacy.  If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
+along with EBXPrivacy.  If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
 
 -------------------------------------------------------------------------------------------------------
-Original source was [here](https://github.com/M66B/XPrivacy)
+Original source was [here](https://github.com/M66B/EBXPrivacy)
 We will try to use it for own purposes.
-We split from original repo @ [commit](https://github.com/M66B/XPrivacy/tree/40e195e0b43959bd9acd4f27c82bf36b7deb8edd)
+We split from original repo @ [commit](https://github.com/M66B/EBXPrivacy/tree/40e195e0b43959bd9acd4f27c82bf36b7deb8edd)

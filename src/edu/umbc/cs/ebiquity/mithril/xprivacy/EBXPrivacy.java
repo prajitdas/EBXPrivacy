@@ -24,7 +24,7 @@ import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.XC_MethodHook;
 import static de.robv.android.xposed.XposedHelpers.findClass;
 
-public class XPrivacy implements IXposedHookLoadPackage, IXposedHookZygoteInit {
+public class EBXPrivacy implements IXposedHookLoadPackage, IXposedHookZygoteInit {
 	private static String mSecret = null;
 	private static List<String> mListHookError = new ArrayList<String>();
 	private static List<CRestriction> mListDisabled = new ArrayList<CRestriction>();
@@ -367,7 +367,7 @@ public class XPrivacy implements IXposedHookLoadPackage, IXposedHookZygoteInit {
 		Log.w("XPrivacy", "Hooking package=" + packageName);
 
 		// Skip hooking self
-		String self = XPrivacy.class.getPackage().getName();
+		String self = EBXPrivacy.class.getPackage().getName();
 		if (packageName.equals(self)) {
 			hookAll(XUtilHook.getInstances(), classLoader, mSecret, false);
 			return;
