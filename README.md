@@ -383,7 +383,7 @@ Installation may seem lengthy, but you can do it quickly:
 	* For Android 5.x see [this XDA thread](http://forum.xda-developers.com/showthread.php?t=3034811)
 	* For Android 5.0.x Touchwiz ROMs see [this XDA thread](http://forum.xda-developers.com/xposed/unofficial-xposed-samsung-lollipop-t3113463)
 	* For Android 5.1 Touchwiz ROMs see [this XDA thread](http://forum.xda-developers.com/xposed/unofficial-xposed-samsung-lollipop-t3180960)
-1. Download and install XPrivacy from [here](http://repo.xposed.info/module/biz.bokhorst.xprivacy)
+1. Download and install XPrivacy from [here](http://repo.xposed.info/module/edu.umbc.cs.ebiquity.mithril.xprivacy)
 	* Alternatively, download it from [here](https://github.com/M66B/XPrivacy/releases)
 1. Enable XPrivacy in the Xposed installer
 1. Start XPrivacy one time
@@ -553,20 +553,20 @@ but please note that this requires a [pro license](http://www.xprivacy.eu/).
 You can automate backups by sending an intent:
 
 ```
-adb shell am start -a biz.bokhorst.xprivacy.action.EXPORT
+adb shell am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXPORT
 ```
 
 If you want to specify a file name for the backup:
 
 ```
-adb shell am start -a biz.bokhorst.xprivacy.action.EXPORT -e FileName /sdcard/test.xml
+adb shell am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXPORT -e FileName /sdcard/test.xml
 ```
 
 You can do this with [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm), for example:
 
 * New task: Any name you like
 * Action Category: Misc/Send Intent
-* Action: biz.bokhorst.xprivacy.action.EXPORT
+* Action: edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXPORT
 * Target: Activity
 * Extra: FileName:/sdcard/test.xml (optional, to specify an export location and file name)
 
@@ -860,7 +860,7 @@ The same applies to the IMEI number, additionally complicated by legal issues in
 <a name="FAQ37"></a>
 **(37) Do I need to have the Google Play Store/services installed for the pro version?**
 
-Only for the [pro license fetcher](https://play.google.com/store/apps/details?id=biz.bokhorst.xprivacy.license), not for a pro license acquired through a PayPal donation.
+Only for the [pro license fetcher](https://play.google.com/store/apps/details?id=edu.umbc.cs.ebiquity.mithril.xprivacy.license), not for a pro license acquired through a PayPal donation.
 The pro license fetcher needs the Google Play Store/services for fetching a pro license, but not for using a pro license.
 
 <a name="FAQ38"></a>
@@ -1068,18 +1068,18 @@ Similarly you can start other activities:
 * Settings
 
 ```
-am start -a biz.bokhorst.xprivacy.action.SETTINGS
-am start -a biz.bokhorst.xprivacy.action.SETTINGS --ei Uid 10123
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.SETTINGS
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.SETTINGS --ei Uid 10123
 ```
 
 * Application details view
 
 ```
-am start -a biz.bokhorst.xprivacy.action.APPLICATION --ei Uid 10123
-am start -a biz.bokhorst.xprivacy.action.APPLICATION --ei Uid 10123 --ei Action 1
-am start -a biz.bokhorst.xprivacy.action.APPLICATION --ei Uid 10123 --ei Action 2
-am start -a biz.bokhorst.xprivacy.action.APPLICATION --ei Uid 10123 -e RestrictionName location
-am start -a biz.bokhorst.xprivacy.action.APPLICATION --ei Uid 10123 -e RestrictionName location -e MethodName GMS.addGeofences
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.APPLICATION --ei Uid 10123
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.APPLICATION --ei Uid 10123 --ei Action 1
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.APPLICATION --ei Uid 10123 --ei Action 2
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.APPLICATION --ei Uid 10123 -e RestrictionName location
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.APPLICATION --ei Uid 10123 -e RestrictionName location -e MethodName GMS.addGeofences
 ```
 
 Action 1 means clear; action 2 means settings.
@@ -1087,29 +1087,29 @@ Action 1 means clear; action 2 means settings.
 * Usage data
 
 ```
-am start -a biz.bokhorst.xprivacy.action.USAGE
-am start -a biz.bokhorst.xprivacy.action.USAGE --ei Uid 10123
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.USAGE
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.USAGE --ei Uid 10123
 ```
 
 * Export, import, submit, fetch, toggle
 
 ```
-am start -a biz.bokhorst.xprivacy.action.EXPORT
-am start -a biz.bokhorst.xprivacy.action.EXPORT --eia UidList 10123,10124 --ez Interactive true
-am start -a biz.bokhorst.xprivacy.action.IMPORT
-am start -a biz.bokhorst.xprivacy.action.IMPORT --eia UidList 10123,10124 --ez Interactive true
-am start -a biz.bokhorst.xprivacy.action.SUBMIT --eia UidList 10123,10124 --ez Interactive true
-am start -a biz.bokhorst.xprivacy.action.FETCH --eia UidList 10123,10124 --ez Interactive true
-am start -a biz.bokhorst.xprivacy.action.TOGGLE --eia UidList 10123,10124 --ez Interactive true
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXPORT
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXPORT --eia UidList 10123,10124 --ez Interactive true
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.IMPORT
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.IMPORT --eia UidList 10123,10124 --ez Interactive true
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.SUBMIT --eia UidList 10123,10124 --ez Interactive true
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.FETCH --eia UidList 10123,10124 --ez Interactive true
+am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.TOGGLE --eia UidList 10123,10124 --ez Interactive true
 ```
 
 * Flush cache, check for updates
 
-These actions require root or the permission *biz.bokhorst.xprivacy.MANAGE_XPRIVACY*.
+These actions require root or the permission *edu.umbc.cs.ebiquity.mithril.xprivacy.MANAGE_XPRIVACY*.
 
 ```
-am startservice -a biz.bokhorst.xprivacy.action.FLUSH
-am startservice -a biz.bokhorst.xprivacy.action.UPDATE
+am startservice -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.FLUSH
+am startservice -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.UPDATE
 ```
 
 With Tasker, you can create shortcuts on your homescreen:
@@ -1223,7 +1223,7 @@ The changelog is an in-app display of [this page](https://github.com/M66B/XPriva
 
 I don't want to publish XPrivacy in dozens of places, because it is extra work that doesn't add any value.
 The current download locations,
-the [Xposed repo](http://repo.xposed.info/module/biz.bokhorst.xprivacy)
+the [Xposed repo](http://repo.xposed.info/module/edu.umbc.cs.ebiquity.mithril.xprivacy)
 and [GitHub](https://github.com/M66B/XPrivacy/releases),
 should be accessible to almost everybody.
 
@@ -1264,7 +1264,7 @@ If it still does not work, try to put the license file in the alternate location
 <a name="FAQ78"></a>
 **(78) Why do I get 'The Play store says not licensed' message when I try to fetch a license?**
 
-This message basically means that the Google Play Store thinks you didn't pay for the [pro license fetcher](https://play.google.com/store/apps/details?id=biz.bokhorst.xprivacy.license).
+This message basically means that the Google Play Store thinks you didn't pay for the [pro license fetcher](https://play.google.com/store/apps/details?id=edu.umbc.cs.ebiquity.mithril.xprivacy.license).
 
 Please make sure you are using the original Google Play Store application, and that the Google Play Store and Google Play services have internet access (mind your firewall).
 Make sure you are not using *Lucky Patcher*, *Freedom*, or similar applications.

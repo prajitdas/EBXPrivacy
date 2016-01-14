@@ -585,7 +585,7 @@ Although the exception is part of the standard API, a lot of applications are no
 	* Run this as root to clear the service cache:
 
 ```
-am startservice -a biz.bokhorst.xprivacy.action.FLUSH
+am startservice -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.FLUSH
 ```
 
 * Not storing salt into database anymore for increased privacy ([issue](/../../issues/1661))
@@ -1847,7 +1847,7 @@ Replacing the location and phone restrictions is ready for testing now.
 **Version 1.10.23 BETA**
 
 * Allow fetching restrictions for system applications per application
-* Do not restrict the [Pro enabler](https://play.google.com/store/apps/details?id=biz.bokhorst.xprivacy.pro) on new install ([issue](https://github.com/M66B/XPrivacy/issues/812))
+* Do not restrict the [Pro enabler](https://play.google.com/store/apps/details?id=edu.umbc.cs.ebiquity.mithril.xprivacy.pro) on new install ([issue](https://github.com/M66B/XPrivacy/issues/812))
 * Samsung multi window support ([issue](https://github.com/M66B/XPrivacy/issues/816))
 * Updated Chinese translation
 * Updated Finnish translation
@@ -1858,7 +1858,7 @@ Replacing the location and phone restrictions is ready for testing now.
 
 * Marked all functions in the system category as dangerous, except one
 * Don't return an empty gids list to prevent exception
-* Require [Pro enabler](http://play.google.com/store/apps/details?id=biz.bokhorst.xprivacy.pro) version 1.12
+* Require [Pro enabler](http://play.google.com/store/apps/details?id=edu.umbc.cs.ebiquity.mithril.xprivacy.pro) version 1.12
 * Leave randomize button enabled when randomize on boot is enabled, thanks @[jpeg729](https://github.com/jpeg729)
 * Changed title of usage data view
 * Fixed activity history ([issue](https://github.com/M66B/XPrivacy/issues/804))
@@ -2108,7 +2108,7 @@ Replacing the location and phone restrictions is ready for testing now.
 **Version 1.9.12 BETA!**
 
 * Fixed title randomize button
-* Broadcast intent *biz.bokhorst.xprivacy.action.ACTIVE* after boot ([issue](https://github.com/M66B/XPrivacy/issues/606))
+* Broadcast intent *edu.umbc.cs.ebiquity.mithril.xprivacy.action.ACTIVE* after boot ([issue](https://github.com/M66B/XPrivacy/issues/606))
 * Compiled for Xposed version 2.2
 * Removed update menu (Xposed 2.2 will take care of updates)
 * This is the [last release on goo.im](http://forum.xda-developers.com/showpost.php?p=45276849&postcount=3233)
@@ -2127,7 +2127,7 @@ Replacing the location and phone restrictions is ready for testing now.
 * Prepare application specific settings / true randomization ([issue](https://github.com/M66B/XPrivacy/issues/540))
 * Fixed not handled restriction ([issue](https://github.com/M66B/XPrivacy/issues/610))
 * Fixed check for file manager ([issue](https://github.com/M66B/XPrivacy/issues/327))
-* Send intent *biz.bokhorst.xprivacy.action.ACTIVE* after boot ([issue](https://github.com/M66B/XPrivacy/issues/606))
+* Send intent *edu.umbc.cs.ebiquity.mithril.xprivacy.action.ACTIVE* after boot ([issue](https://github.com/M66B/XPrivacy/issues/606))
 * Setting for browser user agent ([issue](https://github.com/M66B/XPrivacy/issues/608))
 * Updated German translation
 * Updated Lithuanian translation

@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="biz.bokhorst.xprivacy"
+    package="edu.umbc.cs.ebiquity.mithril"
     android:installLocation="internalOnly"
     android:versionCode="481"
     android:versionName="3.6.19" >
@@ -9,17 +10,17 @@
         android:targetSdkVersion="23" />
 
     <permission-tree
-        android:name="biz.bokhorst.xprivacy"
+        android:name="edu.umbc.cs.ebiquity.mithril.xprivacy"
         android:description="@string/app_name"
         android:icon="@drawable/ic_launcher" />
 
     <permission
-        android:name="biz.bokhorst.xprivacy.MANAGE_PACKAGES"
+        android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.MANAGE_PACKAGES"
         android:description="@string/permission_manage"
         android:label="@string/permission_manage"
         android:protectionLevel="dangerous" />
     <permission
-        android:name="biz.bokhorst.xprivacy.MANAGE_XPRIVACY"
+        android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.MANAGE_XPRIVACY"
         android:description="@string/permission_restrictions"
         android:label="@string/permission_restrictions"
         android:protectionLevel="dangerous" />
@@ -31,9 +32,9 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="biz.bokhorst.xprivacy.MANAGE_PACKAGES" />
-    <uses-permission android:name="biz.bokhorst.xprivacy.MANAGE_XPRIVACY" />
-    <uses-permission android:name="biz.bokhorst.xprivacy.pro.CHECK" />
+    <uses-permission android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.MANAGE_PACKAGES" />
+    <uses-permission android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.MANAGE_XPRIVACY" />
+    <uses-permission android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.pro.CHECK" />
 
     <supports-screens
         android:anyDensity="true"
@@ -44,7 +45,7 @@
         android:xlargeScreens="true" />
 
     <application
-        android:name="ApplicationEx"
+        android:name=".xprivacy.ApplicationEx"
         android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -78,16 +79,27 @@
             android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H"
             android:resource="@dimen/app_minimumsize_h" />
 
+		<activity
+            android:name=".ui.MithrilLauncherActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- XPrivacy -->
         <activity
-            android:name=".ActivityMain"
+            android:name=".xprivacy.ActivityMain"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
             android:launchMode="singleTop" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+<!--                 <category android:name="android.intent.category.LAUNCHER" />
+ -->                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
             <intent-filter>
@@ -101,71 +113,75 @@
                 <data android:pathPattern=".*XPrivacy_license\\.txt" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".ActivityApp"
+            android:name=".xprivacy.ActivityApp"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTop"
-            android:parentActivityName=".ActivityMain" >
+            android:parentActivityName=".xprivacy.ActivityMain" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="biz.bokhorst.xprivacy.ActivityMain" />
+                android:value="edu.umbc.cs.ebiquity.mithril.xprivacy.ActivityMain" />
 
             <intent-filter>
-                <action android:name="biz.bokhorst.xprivacy.action.APPLICATION" />
+                <action android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.action.APPLICATION" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
         <activity
-            android:name=".ActivitySettings"
+            android:name=".xprivacy.ActivitySettings"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTop"
-            android:parentActivityName=".ActivityMain"
+            android:parentActivityName=".xprivacy.ActivityMain"
             android:windowSoftInputMode="stateHidden" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="biz.bokhorst.xprivacy.ActivityMain" />
+                android:value="edu.umbc.cs.ebiquity.mithril.xprivacy.ActivityMain" />
 
             <intent-filter>
-                <action android:name="biz.bokhorst.xprivacy.action.SETTINGS" />
+                <action android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.action.SETTINGS" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
         <activity
-            android:name=".ActivityUsage"
+            android:name=".xprivacy.ActivityUsage"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:parentActivityName=".ActivityMain" >
+            android:parentActivityName=".xprivacy.ActivityMain" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="biz.bokhorst.xprivacy.ActivityMain" />
+                android:value="edu.umbc.cs.ebiquity.mithril.xprivacy.ActivityMain" />
 
             <intent-filter>
-                <action android:name="biz.bokhorst.xprivacy.action.USAGE" />
+                <action android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.action.USAGE" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
         <activity
-            android:name=".ActivityShare"
+            android:name=".xprivacy.ActivityShare"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:parentActivityName=".ActivityMain" >
+            android:parentActivityName=".xprivacy.ActivityMain" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="biz.bokhorst.xprivacy.ActivityMain" />
+                android:value="edu.umbc.cs.ebiquity.mithril.xprivacy.ActivityMain" />
 
             <intent-filter>
-                <action android:name="biz.bokhorst.xprivacy.action.IMPORT" />
-                <action android:name="biz.bokhorst.xprivacy.action.EXPORT" />
-                <action android:name="biz.bokhorst.xprivacy.action.FETCH" />
-                <action android:name="biz.bokhorst.xprivacy.action.SUBMIT" />
-                <action android:name="biz.bokhorst.xprivacy.action.TOGGLE" />
+                <action android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.action.IMPORT" />
+                <action android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXPORT" />
+                <action android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.action.FETCH" />
+                <action android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.action.SUBMIT" />
+                <action android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.action.TOGGLE" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <receiver android:name=".PackageChange" >
+        <receiver android:name=".xprivacy.PackageChange" >
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
                 <action android:name="android.intent.action.PACKAGE_REPLACED" />
@@ -174,13 +190,15 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".BootReceiver" >
+        
+        <receiver android:name=".xprivacy.BootReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+        
         <receiver
-            android:name=".DeviceAdministratorReceiver"
+            android:name=".xprivacy.DeviceAdministratorReceiver"
             android:permission="android.permission.BIND_DEVICE_ADMIN" >
             <meta-data
                 android:name="android.app.device_admin"
@@ -194,16 +212,17 @@
         </receiver>
 
         <service
-            android:name=".UpdateService"
+            android:name=".xprivacy.UpdateService"
             android:enabled="true"
             android:exported="true"
-            android:permission="biz.bokhorst.xprivacy.MANAGE_XPRIVACY"
+            android:permission="edu.umbc.cs.ebiquity.mithril.xprivacy.MANAGE_XPRIVACY"
             android:process=":update" >
             <intent-filter>
-                <action android:name="biz.bokhorst.xprivacy.action.FLUSH" />
-                <action android:name="biz.bokhorst.xprivacy.action.UPDATE" />
+                <action android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.action.FLUSH" />
+                <action android:name="edu.umbc.cs.ebiquity.mithril.xprivacy.action.UPDATE" />
             </intent-filter>
         </service>
+
     </application>
 
 </manifest>

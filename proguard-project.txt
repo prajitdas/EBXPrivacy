@@ -27,6 +27,6 @@
 -libraryjars XposedBridgeApi-20150213.jar
 
 #XPrivacy
--keep class biz.bokhorst.xprivacy.XPrivacy {*; }
--keepnames class biz.bokhorst.xprivacy.X* { }
--keepclassmembers class biz.bokhorst.xprivacy.Util { public static boolean isXposedEnabled(); }
+-keep class edu.umbc.cs.ebiquity.mithril.xprivacy.XPrivacy {*; }
+-keepnames class edu.umbc.cs.ebiquity.mithril.xprivacy.X* { }
+-keepclassmembers class edu.umbc.cs.ebiquity.mithril.xprivacy.Util { public static boolean isXposedEnabled(); }

@@ -11,7 +11,7 @@ Changelog
 
 **Downloads**
 
-* [Xposed module repository](http://repo.xposed.info/module/biz.bokhorst.xprivacy) (stable versions)
+* [Xposed module repository](http://repo.xposed.info/module/edu.umbc.cs.ebiquity.mithril.xprivacy) (stable versions)
 * [GitHub releases](https://github.com/M66B/XPrivacy/releases) (test and beta versions)
 
 **Important**
@@ -188,7 +188,7 @@ Lollipop:
 
 **Version 3.5.4 BETA**
 
-* Broadcast *biz.bokhorst.xprivacy.action.EXCEPTION* if the database could not be read ([issue](/../../issues/2081))
+* Broadcast *edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXCEPTION* if the database could not be read ([issue](/../../issues/2081))
 * Fixed all problems reported through the debug info
 * Allow querying information about own package in most cases ([issue](/../../issues/2079))
 * Updated French translation
@@ -198,7 +198,7 @@ Lollipop:
 **Version 3.5.3 BETA**
 
 * Restart notification for *requestLocationUpdates*, *requestSingleUpdate* and *Srv_requestLocationUpdates*
-* Notify and do not send the intent *biz.bokhorst.xprivacy.action.ACTIVE* when the privacy database was corrupt (discussed on XDA)
+* Notify and do not send the intent *edu.umbc.cs.ebiquity.mithril.xprivacy.action.ACTIVE* when the privacy database was corrupt (discussed on XDA)
 
 **Version 3.5.2 BETA**
 
