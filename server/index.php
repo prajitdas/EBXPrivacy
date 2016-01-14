@@ -1,6 +1,6 @@
 <?php
 	$starttime = microtime(true);
-	require_once('xprivacy.inc.php');
+	require_once('ebxprivacy.inc.php');
 
 	$min_diff = 0.50;
 	$max_confidence = 0.35;
@@ -205,7 +205,7 @@
 					if (empty($restriction->allowed))
 						$restriction->allowed = 0;
 
-					$sql = "INSERT INTO xprivacy (android_id_md5, android_sdk, xprivacy_version,";
+					$sql = "INSERT INTO ebxprivacy (android_id_md5, android_sdk, xprivacy_version,";
 					$sql .= " package_name, package_version, package_version_code,";
 					$sql .= " restriction, method, restricted, allowed, used) VALUES ";
 					$sql .= "('" . $db->real_escape_string($data->android_id) . "'";
@@ -304,7 +304,7 @@
 			$sql .= ", SUM(CASE WHEN restricted != 1 THEN 1 ELSE 0 END) AS not_restricted";
 			$sql .= ", SUM(CASE WHEN allowed > 0 THEN 1 ELSE 0 END) AS allowed";
 			$sql .= ", SUM(CASE WHEN allowed <= 0 THEN 1 ELSE 0 END) AS not_allowed";
-			$sql .= " FROM xprivacy";
+			$sql .= " FROM ebxprivacy";
 			$sql .= " WHERE package_name IN (" . $package_names . ")";
 			$sql .= " GROUP BY restriction, method";
 			$sql .= " ORDER BY restriction ASC, method ASC";
@@ -467,8 +467,8 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="https://github.com/M66B/XPrivacy#xprivacy" target="_blank">XPrivacy</a></li>
-						<li><a href="http://www.xprivacy.eu/" target="_blank">Pro license</a></li>
+						<li><a href="https://github.com/M66B/XPrivacy#ebxprivacy" target="_blank">XPrivacy</a></li>
+						<li><a href="http://www.ebxprivacy.eu/" target="_blank">Pro license</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="http://forum.faircode.eu/contact/" target="_blank">Contact</a></li>
@@ -516,7 +516,7 @@
 
 				// Get restriction count
 				$sql = "SELECT COUNT(*) AS total";
-				$sql .= " FROM xprivacy";
+				$sql .= " FROM ebxprivacy";
 				$result = $db->query($sql);
 				if ($result) {
 					$row = $result->fetch_object();
@@ -576,7 +576,7 @@
 					<p style="font-size: smaller;">
 <?php
 					for ($i = 0; $i < count($package_names); $i++) {
-						echo '<a href="/xprivacy?package_name=' . urlencode($package_names[$i]) . '">';
+						echo '<a href="/ebxprivacy?package_name=' . urlencode($package_names[$i]) . '">';
 						echo htmlentities($package_names[$i], ENT_COMPAT, 'UTF-8') . '</a> ';
 					}
 ?>
@@ -588,9 +588,9 @@
 
 			<div class="page-header">
 				<p>This is a voting system for
-					<a href="https://github.com/M66B/XPrivacy#xprivacy">XPrivacy</a> restrictions.<br />
+					<a href="https://github.com/M66B/XPrivacy#ebxprivacy">XPrivacy</a> restrictions.<br />
 					Everybody using XPrivacy can submit his/her restriction settings.<br />
-					With an XPrivacy <a href="http://www.xprivacy.eu/">pro license</a> you can fetch submitted restriction settings.<br />
+					With an XPrivacy <a href="http://www.ebxprivacy.eu/">pro license</a> you can fetch submitted restriction settings.<br />
 					There are currently <?php echo number_format($total, 0, '.', ','); ?> rules
 					for <?php echo number_format($count, 0, '.', ',') ?> applications submitted.
 				</p>
@@ -621,7 +621,7 @@
 							<span class="glyphicon glyphicon-file"></span>
 							<a class="action" href="#" id="details">Show details</a>
 							<span class="glyphicon glyphicon-comment"></span>
-							<!--a class="action" href="http://forum.faircode.eu/forums/forum/android/xprivacy/applications/?package_name=<?php echo urlencode($package_name); ?>" target="_blank">Discussion</a-->
+							<!--a class="action" href="http://forum.faircode.eu/forums/forum/android/ebxprivacy/applications/?package_name=<?php echo urlencode($package_name); ?>" target="_blank">Discussion</a-->
 							<a class="action" href="https://play.google.com/store/apps/details?id=<?php echo urlencode($package_name); ?>" target="_blank"><img src="play_logo_x2.png" style="width:95px; height:20px" alt="Play store" /></a>
 						</p>
 					</div>
@@ -633,7 +633,7 @@
 				if (!empty($package_name)) {
 					$last_version = '';
 					$sql = "SELECT DISTINCT package_version";
-					$sql .= " FROM xprivacy";
+					$sql .= " FROM ebxprivacy";
 					$sql .= " WHERE package_name = '" . $db->real_escape_string($package_name) . "'";
 					$sql .= " ORDER BY package_version";
 					$result = $db->query($sql);
@@ -725,7 +725,7 @@
 						$sql .= ", MAX(used) AS used";
 						$sql .= ", MAX(modified) AS modified";
 						$sql .= ", SUM(updates) AS updates";
-						$sql .= " FROM xprivacy";
+						$sql .= " FROM ebxprivacy";
 						$sql .= " WHERE package_name = '" . $db->real_escape_string($package_name) . "'";
 						$sql .= " GROUP BY restriction, method";
 						$sql .= " ORDER BY restriction, method";

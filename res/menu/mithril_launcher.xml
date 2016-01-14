@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="edu.umbc.cs.ebiquity.mithril.xprivacy.MithrilLauncherActivity" >
+    tools:context="edu.umbc.cs.ebiquity.mithril.ebxprivacy.MithrilLauncherActivity" >
 
     <item
         android:id="@+id/action_settings"

@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `xprivacy`
+-- Table structure for table `ebxprivacy`
 --
 
-CREATE TABLE IF NOT EXISTS `xprivacy` (
+CREATE TABLE IF NOT EXISTS `ebxprivacy` (
 `id` int(11) NOT NULL,
   `android_id_md5` text NOT NULL,
   `android_sdk` int(11) NOT NULL,
@@ -78,9 +78,9 @@ CREATE TABLE IF NOT EXISTS `xprivacy_update` (
 --
 
 --
--- Indexes for table `xprivacy`
+-- Indexes for table `ebxprivacy`
 --
-ALTER TABLE `xprivacy`
+ALTER TABLE `ebxprivacy`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `restriction` (`android_id_md5`(50),`android_sdk`,`package_name`(100),`package_version`(50),`package_version_code`,`restriction`(20),`method`(70)), ADD KEY `package` (`package_name`(100));
 
 --
@@ -100,9 +100,9 @@ ALTER TABLE `xprivacy_update`
 --
 
 --
--- AUTO_INCREMENT for table `xprivacy`
+-- AUTO_INCREMENT for table `ebxprivacy`
 --
-ALTER TABLE `xprivacy`
+ALTER TABLE `ebxprivacy`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8302378;
 --
 -- AUTO_INCREMENT for table `xprivacy_app`

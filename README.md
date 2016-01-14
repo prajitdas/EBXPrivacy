@@ -3,7 +3,7 @@ EBXPrivacy
 
 The ultimate, yet easy to use, privacy manager for Android
 
-<img src="http://www.xprivacy.eu/open-source-rookie-of-the-year-resized.png" width="315" height="333" alt="Open source Rookie of the year" />
+<img src="http://www.ebxprivacy.eu/open-source-rookie-of-the-year-resized.png" width="315" height="333" alt="Open source Rookie of the year" />
 ([publication](http://www.blackducksoftware.com/news/releases/black-duck-announces-open-source-rookies-year-winners))
 
 Index
@@ -79,7 +79,7 @@ Root access is needed to install the Xposed framework.
 
 **EBXPrivacy was a lot of work, so please support this project.**
 
-If you want to donate, see [here](http://www.xprivacy.eu/) for all options.
+If you want to donate, see [here](http://www.ebxprivacy.eu/) for all options.
 
 **Use EBXPrivacy entirely at your own risk.**
 
@@ -330,7 +330,7 @@ Limitations
 * It is not possible to restrict external hardware MAC addresses or the external IP address, see also [FAQ 33](#FAQ33)
 * You cannot restrict *Configuration.MCC/MNC* on demand
 * Allowing contacts for SIM-contacts isn't supported (who is using these anymore?)
-* Calendars and contacts cannot be restricted for specific accounts; it is all or nothing; however, it is possible to allow individual contacts with a [pro license](http://www.xprivacy.eu/)
+* Calendars and contacts cannot be restricted for specific accounts; it is all or nothing; however, it is possible to allow individual contacts with a [pro license](http://www.ebxprivacy.eu/)
 * It is possible to unhook methods in user space using native libraries, see for more details [FAQ 68](#FAQ68)
 * In some situations, the on demand restricting dialog freezes, notably when using volume keys. This cannot be fixed due to Android limitations.
 * In some situations, the on demand restricting dialog is overlayed by other windows, notably notifications. This cannot be fixed due to Android limitations.
@@ -345,7 +345,7 @@ Limitations
 * You cannot restrict *IPC* because it is needed for internal checks
 * You cannot restrict *Storage* because it is needed to read the pro license file
 * You cannot restrict *System* because it is needed to get the application list
-* You cannot restrict *View* because it is needed to open links to the [crowd sourced restrictions](http://crowd.xprivacy.eu/)
+* You cannot restrict *View* because it is needed to open links to the [crowd sourced restrictions](http://crowd.ebxprivacy.eu/)
 
 You can restrict the EBXPrivacy app's access to accounts, contacts, and other things.
 
@@ -383,7 +383,7 @@ Installation may seem lengthy, but you can do it quickly:
 	* For Android 5.x see [this XDA thread](http://forum.xda-developers.com/showthread.php?t=3034811)
 	* For Android 5.0.x Touchwiz ROMs see [this XDA thread](http://forum.xda-developers.com/xposed/unofficial-xposed-samsung-lollipop-t3113463)
 	* For Android 5.1 Touchwiz ROMs see [this XDA thread](http://forum.xda-developers.com/xposed/unofficial-xposed-samsung-lollipop-t3180960)
-1. Download and install EBXPrivacy from [here](http://repo.xposed.info/module/edu.umbc.cs.ebiquity.mithril.xprivacy)
+1. Download and install EBXPrivacy from [here](http://repo.xposed.info/module/edu.umbc.cs.ebiquity.mithril.ebxprivacy)
 	* Alternatively, download it from [here](https://github.com/M66B/EBXPrivacy/releases)
 1. Enable EBXPrivacy in the Xposed installer
 1. Start EBXPrivacy one time
@@ -403,14 +403,14 @@ If you want to uninstall EBXPrivacy, you have two options:
 
 In either case, don't forget to reboot.
 
-To save space, you can delete the folder */data/system/xprivacy* after uninstalling.
+To save space, you can delete the folder */data/system/ebxprivacy* after uninstalling.
 
 Upgrading
 ---------
 
 * **Make a backup**
 * **Do not remove the previous version** (else you will lose your settings)
-* Download the new version (with a [pro license](http://www.xprivacy.eu/) you can use the menu *Help ...* > *Check for updates*)
+* Download the new version (with a [pro license](http://www.ebxprivacy.eu/) you can use the menu *Help ...* > *Check for updates*)
 * Install the new version over the previous version
 * Wait until the Xposed installer recognizes the update (else EBXPrivacy might not be enabled)
 * Start the new version once (else Android will not send the *Boot Completed* event)
@@ -501,8 +501,8 @@ EBXPrivacy asks for the following Android permissions:
 * Accounts: to be able to restrict applications' access to accounts
 * Contacts: to be able to restrict applications' access to contacts
 * Boot: to be able to check if EBXPrivacy is enabled
-* Internet: to be able to submit and fetch [crowd sourced restrictions](http://crowd.xprivacy.eu/)
-* Storage: to be able to read the pro license file and to be able to export EBXPrivacy's settings to the SD-card (only with a [pro license](http://www.xprivacy.eu/))
+* Internet: to be able to submit and fetch [crowd sourced restrictions](http://crowd.ebxprivacy.eu/)
+* Storage: to be able to read the pro license file and to be able to export EBXPrivacy's settings to the SD-card (only with a [pro license](http://www.ebxprivacy.eu/))
 * Wakelock: to keep the processor running during batch operations
 
 If desired, you can even restrict EBXPrivacy from accessing any of the above,
@@ -548,32 +548,32 @@ This is because the database is no longer stored in the EBXPrivacy data folder, 
 I have tried to store the database in the EBXPrivacy data folder, but this leads to all kinds of permission problems.
 
 The best practice is to use EBXPrivacy's export function (*Main Menu* > *Export*) to backup EBXPrivacy data,
-but please note that this requires a [pro license](http://www.xprivacy.eu/).
+but please note that this requires a [pro license](http://www.ebxprivacy.eu/).
 
 You can automate backups by sending an intent:
 
 ```
-adb shell am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXPORT
+adb shell am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.EXPORT
 ```
 
 If you want to specify a file name for the backup:
 
 ```
-adb shell am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXPORT -e FileName /sdcard/test.xml
+adb shell am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.EXPORT -e FileName /sdcard/test.xml
 ```
 
 You can do this with [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm), for example:
 
 * New task: Any name you like
 * Action Category: Misc/Send Intent
-* Action: edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXPORT
+* Action: edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.EXPORT
 * Target: Activity
 * Extra: FileName:/sdcard/test.xml (optional, to specify an export location and file name)
 
 <a name="FAQ6"></a>
 **(6) Precisely which functions can EBXPrivacy restrict?**
 
-Many. See [here](https://github.com/M66B/EBXPrivacy/blob/master/src/biz/bokhorst/xprivacy/Meta.java) for details.
+Many. See [here](https://github.com/M66B/EBXPrivacy/blob/master/src/biz/bokhorst/ebxprivacy/Meta.java) for details.
 
 <a name="FAQ7"></a>
 **(7) How safe is EBXPrivacy?**
@@ -606,7 +606,7 @@ Assuming you don't wish to wipe data, and that Xposed and EBXPrivacy are already
 
 If you skip the export, clear, or import steps above, some system applications can end up with the wrong restrictions because the ROM update might have changed these applications' UID's.
 
-To import and export EBXPrivacy's data, you need a [pro license](http://www.xprivacy.eu/).
+To import and export EBXPrivacy's data, you need a [pro license](http://www.ebxprivacy.eu/).
 
 <a name="FAQ10"></a>
 **(10) Can I restrict root access?**
@@ -650,7 +650,7 @@ but logcats captured this way are not always sufficient. The best way to capture
 If you need a logcat from system start, you can run this command on your device (this will force an Android restart):
 
 ```
-killall system_server; logcat | grep -i xprivacy
+killall system_server; logcat | grep -i ebxprivacy
 ```
 
 Upload the captured logcat somewhere, for example to Google Drive,
@@ -663,7 +663,7 @@ Don't forget to mention the *UID* of the application to look into, when relevant
 EBXPrivacy's restrictions, settings, and usage data are stored in an sqlite3 database in this folder:
 
 ```
-/data/system/xprivacy
+/data/system/ebxprivacy
 ```
 
 <a name="FAQ16"></a>
@@ -674,7 +674,7 @@ In the application details view, it will. In the main list view, you are protect
 <a name="FAQ17"></a>
 **(17) How can I export/import my settings?**
 
-You need a [pro license](http://www.xprivacy.eu/) to import your settings. Exported settings are stored in the folder *.xprivacy* in the file *EBXPrivacy.xml*. You can copy this file to the same place on any other device. When importing, settings are only applied to user and system applications that actually exist on both devices.
+You need a [pro license](http://www.ebxprivacy.eu/) to import your settings. Exported settings are stored in the folder *.ebxprivacy* in the file *EBXPrivacy.xml*. You can copy this file to the same place on any other device. When importing, settings are only applied to user and system applications that actually exist on both devices.
 
 The export file will contain all restrictions and settings, but note that allowed accounts and contacts (not the accounts and contacts themselves) can only be imported when the Android ID is the same.
 
@@ -860,7 +860,7 @@ The same applies to the IMEI number, additionally complicated by legal issues in
 <a name="FAQ37"></a>
 **(37) Do I need to have the Google Play Store/services installed for the pro version?**
 
-Only for the [pro license fetcher](https://play.google.com/store/apps/details?id=edu.umbc.cs.ebiquity.mithril.xprivacy.license), not for a pro license acquired through a PayPal donation.
+Only for the [pro license fetcher](https://play.google.com/store/apps/details?id=edu.umbc.cs.ebiquity.mithril.ebxprivacy.license), not for a pro license acquired through a PayPal donation.
 The pro license fetcher needs the Google Play Store/services for fetching a pro license, but not for using a pro license.
 
 <a name="FAQ38"></a>
@@ -1068,18 +1068,18 @@ Similarly you can start other activities:
 * Settings
 
 ```
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.SETTINGS
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.SETTINGS --ei Uid 10123
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.SETTINGS
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.SETTINGS --ei Uid 10123
 ```
 
 * Application details view
 
 ```
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.APPLICATION --ei Uid 10123
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.APPLICATION --ei Uid 10123 --ei Action 1
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.APPLICATION --ei Uid 10123 --ei Action 2
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.APPLICATION --ei Uid 10123 -e RestrictionName location
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.APPLICATION --ei Uid 10123 -e RestrictionName location -e MethodName GMS.addGeofences
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.APPLICATION --ei Uid 10123
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.APPLICATION --ei Uid 10123 --ei Action 1
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.APPLICATION --ei Uid 10123 --ei Action 2
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.APPLICATION --ei Uid 10123 -e RestrictionName location
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.APPLICATION --ei Uid 10123 -e RestrictionName location -e MethodName GMS.addGeofences
 ```
 
 Action 1 means clear; action 2 means settings.
@@ -1087,29 +1087,29 @@ Action 1 means clear; action 2 means settings.
 * Usage data
 
 ```
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.USAGE
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.USAGE --ei Uid 10123
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.USAGE
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.USAGE --ei Uid 10123
 ```
 
 * Export, import, submit, fetch, toggle
 
 ```
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXPORT
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXPORT --eia UidList 10123,10124 --ez Interactive true
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.IMPORT
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.IMPORT --eia UidList 10123,10124 --ez Interactive true
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.SUBMIT --eia UidList 10123,10124 --ez Interactive true
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.FETCH --eia UidList 10123,10124 --ez Interactive true
-am start -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.TOGGLE --eia UidList 10123,10124 --ez Interactive true
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.EXPORT
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.EXPORT --eia UidList 10123,10124 --ez Interactive true
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.IMPORT
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.IMPORT --eia UidList 10123,10124 --ez Interactive true
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.SUBMIT --eia UidList 10123,10124 --ez Interactive true
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.FETCH --eia UidList 10123,10124 --ez Interactive true
+am start -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.TOGGLE --eia UidList 10123,10124 --ez Interactive true
 ```
 
 * Flush cache, check for updates
 
-These actions require root or the permission *edu.umbc.cs.ebiquity.mithril.xprivacy.MANAGE_XPRIVACY*.
+These actions require root or the permission *edu.umbc.cs.ebiquity.mithril.ebxprivacy.MANAGE_XPRIVACY*.
 
 ```
-am startservice -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.FLUSH
-am startservice -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.UPDATE
+am startservice -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.FLUSH
+am startservice -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.UPDATE
 ```
 
 With Tasker, you can create shortcuts on your homescreen:
@@ -1176,7 +1176,7 @@ You can force EBXPrivacy 3 into AOSP mode using the main settings.
 This will work on Lollipop when SELinux is disabled, or in permissive mode, or if you add this build property:
 
 ```
-xprivacy.options=ignoreselinux
+ebxprivacy.options=ignoreselinux
 ```
 
 There is no need to force AOSP mode if EBXPrivacy recognizes your ROM as a compatible ROM.
@@ -1223,7 +1223,7 @@ The changelog is an in-app display of [this page](https://github.com/M66B/EBXPri
 
 I don't want to publish EBXPrivacy in dozens of places, because it is extra work that doesn't add any value.
 The current download locations,
-the [Xposed repo](http://repo.xposed.info/module/edu.umbc.cs.ebiquity.mithril.xprivacy)
+the [Xposed repo](http://repo.xposed.info/module/edu.umbc.cs.ebiquity.mithril.ebxprivacy)
 and [GitHub](https://github.com/M66B/EBXPrivacy/releases),
 should be accessible to almost everybody.
 
@@ -1247,7 +1247,7 @@ An example is the Dolphin browser and its plugins/addons.
 <a name="FAQ76"></a>
 **(76) What happened to the import/export enabler?**
 
-Please read [here](http://forum.xda-developers.com/xposed/modules/xprivacy-ultimate-android-privacy-app-t2320783/page1281#post57091458).
+Please read [here](http://forum.xda-developers.com/xposed/modules/ebxprivacy-ultimate-android-privacy-app-t2320783/page1281#post57091458).
 
 <a name="FAQ77"></a>
 **(77) Why does my pro license not work?**
@@ -1264,7 +1264,7 @@ If it still does not work, try to put the license file in the alternate location
 <a name="FAQ78"></a>
 **(78) Why do I get 'The Play store says not licensed' message when I try to fetch a license?**
 
-This message basically means that the Google Play Store thinks you didn't pay for the [pro license fetcher](https://play.google.com/store/apps/details?id=edu.umbc.cs.ebiquity.mithril.xprivacy.license).
+This message basically means that the Google Play Store thinks you didn't pay for the [pro license fetcher](https://play.google.com/store/apps/details?id=edu.umbc.cs.ebiquity.mithril.ebxprivacy.license).
 
 Please make sure you are using the original Google Play Store application, and that the Google Play Store and Google Play services have internet access (mind your firewall).
 Make sure you are not using *Lucky Patcher*, *Freedom*, or similar applications.
@@ -1279,15 +1279,15 @@ Try to fetch a license again. If you keep having this problem, please contact me
 
 By creating this file:
 
-*/data/system/xprivacy/disabled*
+*/data/system/ebxprivacy/disabled*
 
 Each line should either contain a category name or a category name and function name separated by a slash (/).
-See [here](https://github.com/M66B/EBXPrivacy/blob/master/src/biz/bokhorst/xprivacy/Meta.java#L47) for the correct category and function names.
+See [here](https://github.com/M66B/EBXPrivacy/blob/master/src/biz/bokhorst/ebxprivacy/Meta.java#L47) for the correct category and function names.
 
 If SELinux is restrictive, you need to add this build property:
 
 ```
-xprivacy.options=ignoreselinux
+ebxprivacy.options=ignoreselinux
 ```
 
 <a name="FAQ80"></a>
@@ -1383,7 +1383,7 @@ See [here](http://forum.xda-developers.com/showpost.php?p=51574315&postcount=877
 Please read [here](http://forum.xda-developers.com/showpost.php?p=52644313&postcount=9241) before voting.
 
 Implementation of new features is dependent on contributions to the EBXPrivacy project.
-Please read [here](http://forum.xda-developers.com/xposed/modules/xprivacy-ultimate-android-privacy-app-t2320783/post57469136#post57469136) for more information.
+Please read [here](http://forum.xda-developers.com/xposed/modules/ebxprivacy-ultimate-android-privacy-app-t2320783/post57469136#post57469136) for more information.
 
 **One feature request per issue please!**
 
@@ -1448,7 +1448,7 @@ After over a year of silence, the author of PDroid 2.0 released *DonkeyGuard*.
 
 EBXPrivacy can restrict more data than any of the above solutions,
 even for closed source applications and libraries, like Google Play services.
-Unlike any other solution, EBXPrivacy has [crowd sourced restrictions](http://crowd.xprivacy.eu/).
+Unlike any other solution, EBXPrivacy has [crowd sourced restrictions](http://crowd.ebxprivacy.eu/).
 
 I do not recommend using EBXPrivacy in combination with any of the similar solutions; this could result in conflicts and potential data leaks.
 
@@ -1458,17 +1458,17 @@ If you test EBXPrivacy alongside any of the similar solutions, you can probably 
 <a name="news"></a>In The Media
 ------------
 
-* [Manage Individual App Permissions with EBXPrivacy - XDA Developer](http://www.xda-developers.com/android/manage-individual-app-permissions-with-xprivacy/) (June 20, 2013)
-* [EBXPrivacy Gives You Massive Control Over What Your Installed Apps Are Allowed To Do - Android Police](http://www.androidpolice.com/2013/06/23/xprivacy-gives-you-massive-control-over-what-your-installed-apps-are-allowed-to-do/) (June 23, 2013)
-* [Protect Your Privacy with EBXPrivacy - XDA Developer TV](http://www.xda-developers.com/android/protect-your-privacy-with-xprivacy-xda-developer-tv/) (July 17, 2013)
+* [Manage Individual App Permissions with EBXPrivacy - XDA Developer](http://www.xda-developers.com/android/manage-individual-app-permissions-with-ebxprivacy/) (June 20, 2013)
+* [EBXPrivacy Gives You Massive Control Over What Your Installed Apps Are Allowed To Do - Android Police](http://www.androidpolice.com/2013/06/23/ebxprivacy-gives-you-massive-control-over-what-your-installed-apps-are-allowed-to-do/) (June 23, 2013)
+* [Protect Your Privacy with EBXPrivacy - XDA Developer TV](http://www.xda-developers.com/android/protect-your-privacy-with-ebxprivacy-xda-developer-tv/) (July 17, 2013)
 * [Black Duck Announces Open Source Rookies of the Year Winners - Black Duck Software](http://www.blackducksoftware.com/news/releases/black-duck-announces-open-source-rookies-year-winners) (January 28, 2014)
 * [The Open Source Rookies of the Year Awards - InfoWorld](http://www.infoworld.com/d/open-source-software/the-open-source-rookies-of-the-year-awards-235116) (January 28, 2014)
-* [EBXPrivacy تطبيق](http://waleedhassan.wordpress.com/2014/01/31/xprivacy/) (January 31, 2014)
+* [EBXPrivacy تطبيق](http://waleedhassan.wordpress.com/2014/01/31/ebxprivacy/) (January 31, 2014)
 * [Out in the Open: How to Protect Your Secrets From Nosey Android Apps - Wired](http://www.wired.com/2014/03/x-privacy/) (March 31, 2014)
 * [Android privacy tool feeds fake data to prying apps - Wired UK](http://www.wired.co.uk/news/archive/2014-04/01/x-privacy-android-app) (April 1, 2014)
 * [Internet Vandaag](http://www.bnr.nl/radio/bnr-internet-vandaag/708487-1404/internet-vandaag-74) (April 7, 2014)
-* [Protecting Your Privacy: App Ops, Privacy Guard, and EBXPrivacy - XDA Developers](http://www.xda-developers.com/android/protecting-your-privacy-app-ops-privacy-guard-and-xprivacy/) (June 11, 2014)
-* [EBXPrivacy – Android ohne Google?! Teil6](http://www.kuketz-blog.de/xprivacy-android-ohne-google-teil6/) (September 23, 2014)
+* [Protecting Your Privacy: App Ops, Privacy Guard, and EBXPrivacy - XDA Developers](http://www.xda-developers.com/android/protecting-your-privacy-app-ops-privacy-guard-and-ebxprivacy/) (June 11, 2014)
+* [EBXPrivacy – Android ohne Google?! Teil6](http://www.kuketz-blog.de/ebxprivacy-android-ohne-google-teil6/) (September 23, 2014)
 
 Contributing
 ------------
@@ -1529,8 +1529,8 @@ Current translations:
 Restrict new data:
 
 * Find the package/class/method that exposes the data (look into the Android documentation/sources)
-* Create a class that extends [XHook](https://github.com/M66B/EBXPrivacy/blob/master/src/biz/bokhorst/xprivacy/XHook.java)
-* Hook the methods in [EBXPrivacy](https://github.com/M66B/EBXPrivacy/blob/master/src/biz/bokhorst/xprivacy/EBXPrivacy.java)
+* Create a class that extends [XHook](https://github.com/M66B/EBXPrivacy/blob/master/src/biz/bokhorst/ebxprivacy/XHook.java)
+* Hook the methods in [EBXPrivacy](https://github.com/M66B/EBXPrivacy/blob/master/src/biz/bokhorst/ebxprivacy/EBXPrivacy.java)
 * Write a before and/or after method to restrict the data
 * Do a [pull request](https://help.github.com/articles/using-pull-requests) if you want to contribute
 
@@ -1566,7 +1566,7 @@ Application-specific code is undesirable, because it could result in maintenance
 EBXPrivacy is intended to restrict applications, but is not intended to restrict Android itself
 (although this is often possible as a side effect).
 
-See [here](https://www.openhub.net/p/xprivacy/) for EBXPrivacy code metrics.
+See [here](https://www.openhub.net/p/ebxprivacy/) for EBXPrivacy code metrics.
 
 Please note that you agree to the license below by contributing, including the copyright.
 

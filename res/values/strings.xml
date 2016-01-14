@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Translators: do not include texts with translatable="false" -->
-    <string name="app_name" translatable="false">XPrivacy</string>
+    <string name="app_name" translatable="false">EBXPrivacy</string>
     <string name="app_notenabled">XPrivacy is not enabled in the Xposed installer</string>
     <string name="app_wrongandroid">Only for Android version 4.0.3+</string>
     <string name="app_incompatible">XPrivacy is incompatible with %1$s</string>
@@ -12,7 +12,7 @@
     <string name="app_copyright">Copyright \u00A9 2013–2015 by M. Bokhorst (M66B)</string>
     <string name="app_compatibility">Running in compatibility mode</string>
     <string name="app_licensed">Licensed, thanks for your support!</string>
-    <string name="app_help" translatable="false">https://github.com/M66B/XPrivacy#xprivacy</string>
+    <string name="app_help" translatable="false">https://github.com/M66B/XPrivacy#ebxprivacy</string>
     <string name="app_support" translatable="false">http://forum.xda-developers.com/showthread.php?t=2320783</string>
     <string name="menu_usage">Usage data</string>
     <string name="menu_refresh">Refresh</string>

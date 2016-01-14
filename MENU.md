@@ -119,6 +119,6 @@
 * Functions on demand check mark - this will enable/disable on demand popups for the individual function
 * Manage white list icon - this will be shown if a function has white/blacklist entries, pressing it will open the white list manager to the specific list *1
 
-*1 - Pro feature (see [Xprivacy.eu](http://xprivacy.eu) for more info)
+*1 - Pro feature (see [Xprivacy.eu](http://ebxprivacy.eu) for more info)
 
 *This page was kindly contributed by [an0n981](https://github.com/an0n981)*

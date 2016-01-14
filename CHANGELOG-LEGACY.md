@@ -14,7 +14,7 @@ See for more information about XPrivacy 3 [here](https://github.com/M66B/XPrivac
 * Updating from a version prior to 2.1.21 you will need to setup the IPC restrictions again, except for *Reflection*
 * From version 2.0.29 dangerous functions need to be restricted manually (manually includes the template, if defined to do so)
 * From version 2.1.20 batch operations (toggle restrictions for multiple applications) require a pro license
-	* I have put about 2000 hours into developing and supporting XPrivacy so far. The reason for [accepting donations](http://www.xprivacy.eu/) is to keep myself motivated to keep doing this. Unfortunately the number of donations is quite low and thus not very motivating. So, don't start complaining about this change, but instead think about supporting this huge project. You can still fully protect your privacy with all the free features of XPrivacy. I have made a promise that you will always be able to do so and I intend to keep this promise.
+	* I have put about 2000 hours into developing and supporting XPrivacy so far. The reason for [accepting donations](http://www.ebxprivacy.eu/) is to keep myself motivated to keep doing this. Unfortunately the number of donations is quite low and thus not very motivating. So, don't start complaining about this change, but instead think about supporting this huge project. You can still fully protect your privacy with all the free features of XPrivacy. I have made a promise that you will always be able to do so and I intend to keep this promise.
 * From version 2.1.21-5 *I don't know* will allow dangerous functions once (other functions are still denied once)
 
 **Version 2.3 STABLE**
@@ -115,7 +115,7 @@ Other changes:
 **Version 2.2.4 TEST**
 
 * Fixed alignment of the check boxes in the details view
-* Added menu *Check for updates* (only [Pro license](http://www.xprivacy.eu/))
+* Added menu *Check for updates* (only [Pro license](http://www.ebxprivacy.eu/))
 * Fixed restriction *Srv_startActivities* ([issue](/../../issues/1853))
 * Updated Dutch translation
 * Updated Simplified Chinese translation
@@ -147,7 +147,7 @@ This means that if a function was moved from internet to network,
 it will only be restricted if the network category was restricted.
 
 * Fixed all problems reported through the support info
-* Option to white/black list from usage data (long press entry) ([issue](/../../issues/1821)) (only [Pro license](http://www.xprivacy.eu/))
+* Option to white/black list from usage data (long press entry) ([issue](/../../issues/1821)) (only [Pro license](http://www.ebxprivacy.eu/))
 * Added IPC restrictions for *IApplicationThread*, *IContentProvider* and *IWindowSession* (on demand restricting only)
 * Added wildcards for IPC transaction names
 * Fixed translating transaction codes into transaction names in most cases
@@ -247,7 +247,7 @@ Changes since previous version:
 
 * Added option to specify file name to export intent ([issue](/../../issues/1784))
 * Added option to blacklist applications, accounts and contacts ([issue](/../../issues/1781))
-* Fixed order of applications to allow ([Pro license](http://www.xprivacy.eu/) only)
+* Fixed order of applications to allow ([Pro license](http://www.ebxprivacy.eu/) only)
 * Allowing cancel of accounts, applications and contacts to allow dialog
 * Faster and more secure IPC restriction implementation with transaction whitelisting
 * Fixed all problems reported through the support info
@@ -268,7 +268,7 @@ Changes since previous version:
 * Added option to sort by state ([issue](/../../issues/1772))
 * Some small performance optimizations
 * Require a pro license for batch operations (toggle restrictions for multiple applications)
-	* I have put about 2000 hours into developing and supporting XPrivacy so far. The reason for [accepting donations](http://www.xprivacy.eu/) is to keep myself motivated to keep doing this. Unfortunately the number of donations is quite low and thus not very motivating. So, don't start complaining about this change, but instead think about supporting this huge project. You can still fully protect your privacy with all the free features of XPrivacy. I have made a promise that you will always be able to do so and I intent to keep this promise.
+	* I have put about 2000 hours into developing and supporting XPrivacy so far. The reason for [accepting donations](http://www.ebxprivacy.eu/) is to keep myself motivated to keep doing this. Unfortunately the number of donations is quite low and thus not very motivating. So, don't start complaining about this change, but instead think about supporting this huge project. You can still fully protect your privacy with all the free features of XPrivacy. I have made a promise that you will always be able to do so and I intent to keep this promise.
 * Allow white listing of top folders of file name of *android.intent.action.VIEW*
 * Made *getAllProviders* and *getBestProvider* dangerous
 * Updated Danish translation
@@ -341,7 +341,7 @@ Changes since previous version:
 * Added option to disable restrictions at boot:
 
 ```
-cd /data/system/xprivacy
+cd /data/system/ebxprivacy
 echo "ipc" >disabled
 echo "system.getInstalledProviders" >>disabled
 ```
@@ -585,7 +585,7 @@ Although the exception is part of the standard API, a lot of applications are no
 	* Run this as root to clear the service cache:
 
 ```
-am startservice -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.FLUSH
+am startservice -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.FLUSH
 ```
 
 * Not storing salt into database anymore for increased privacy ([issue](/../../issues/1661))
@@ -761,9 +761,9 @@ Main changes since stable version 1.11:
 	* XPrivacy will ask to allow/deny on actual function usage
 * Added white and black listing for files, IP addresses, domain names, commands, libraries and URLs
 	* White and black listing on demand are available to anyone
-	* White/black list management from the user interface requires a [Pro license](http://www.xprivacy.eu/)
+	* White/black list management from the user interface requires a [Pro license](http://www.ebxprivacy.eu/)
 	* Clearing restrictions will clear white/black lists too
-* Added parameters to usage data (option) (only [Pro license](http://www.xprivacy.eu/))
+* Added parameters to usage data (option) (only [Pro license](http://www.ebxprivacy.eu/))
 * Added a service to migrate settings, upgrade and randomize
 * Added sorting and extended filtering
 * Added multiple select and batch operations to set, reset, import and export restrictions
@@ -775,8 +775,8 @@ Main changes since stable version 1.11:
 	* Allows for disabling restrictions, without taking away the ability to edit restrictions
 * Support for multiple users (if your device supports this)
 * XPrivacy became [one of the Open Source Rookies of 2013](http://www.blackducksoftware.com/news/releases/black-duck-announces-open-source-rookies-year-winners)
-* The number of [crowd sourced restrictions](https://crowd.xprivacy.eu/) is more than 5 million now
-* Donations are [accepted in Bitcoins](http://www.xprivacy.eu/#bitcoin) now too
+* The number of [crowd sourced restrictions](https://crowd.ebxprivacy.eu/) is more than 5 million now
+* Donations are [accepted in Bitcoins](http://www.ebxprivacy.eu/#bitcoin) now too
 
 Other changes:
 
@@ -929,7 +929,7 @@ Other changes:
 
 * Toggle restriction will allow to choose between, clear, restrict and template ([issue](/../../issues/1319))
 * Option to select if existing restrictions should be deleted on import or fetch ([issue](/../../issues/1119))
-* Move database to /data/system/xprivacy ([issue](/../../issues/1437))
+* Move database to /data/system/ebxprivacy ([issue](/../../issues/1437))
 * Submit functions with a white/blacklist as having an exception ([issue](/../../issues/1438))
 * On demand timeout will result in using defined restriction (was deny once)
 * Import/export one application will not import/export global settings
@@ -975,7 +975,7 @@ Other changes:
 * Added /proc to files whitelist ([issue](/../../issues/1375))
 * *storage/open* will also check media storage
 * Clear restrictions will clear whitelists ([issue](/../../issues/1375))
-* Whitelist management requires a [Pro license](http://www.xprivacy.eu/)
+* Whitelist management requires a [Pro license](http://www.ebxprivacy.eu/)
 * Limit parameters to 250 characters (some applications use long Javascript for loadUrl)
 * Updated Dutch translation
 * Updated Lithuanian translation
@@ -1037,7 +1037,7 @@ Other changes:
 * Fixed function name overlapping information icon
 * Fixed defaults for some on demand restricting settings
 * Clear all data will also clear local caches
-* Show parameters in usage data (only [Pro license](http://www.xprivacy.eu/))
+* Show parameters in usage data (only [Pro license](http://www.ebxprivacy.eu/))
 * Added restriction for deprecated *contacts/people* ([issue](/../../issues/1367))
 * Added restriction for storage/open file on common storage (sdcard or internal storage)
 * Added restriction for internet/socket
@@ -1260,7 +1260,7 @@ Other changes:
 * Fixed handling for automated export, thanks @[jpeg729](https://github.com/jpeg729) ([issue](https://github.com/M66B/XPrivacy/issues/1211))
 	* See the [FAQ question 6](https://github.com/M66B/XPrivacy#FAQ6) for how to
 * Added function name to on demand restricting dialog
-* Moved database back to /data/xprivacy, see also the [FAQ question 6](https://github.com/M66B/XPrivacy#FAQ6)
+* Moved database back to /data/ebxprivacy, see also the [FAQ question 6](https://github.com/M66B/XPrivacy#FAQ6)
 
 **Version 1.99.24 BETA**
 
@@ -1480,7 +1480,7 @@ Other changes:
 
 **Version 1.11.12 BETA**
 
-* Use secure connection for [submitting and fetching restrictions](https://crowd.xprivacy.eu/)
+* Use secure connection for [submitting and fetching restrictions](https://crowd.ebxprivacy.eu/)
 * Skip upgrade for dangerous functions
 * Restored original location and telephony restrictions
 
@@ -1607,7 +1607,7 @@ Replacing the location and phone restrictions is ready for testing now.
 
 * Fixed application notification setting not sticking ([issue](https://github.com/M66B/XPrivacy/issues/1006))
 * Sort applications respecting locale, thanks @[jpeg729](https://github.com/jpeg729)
-* Display if Pro version (only [Pro license](http://www.xprivacy.eu/)) ([issue](https://github.com/M66B/XPrivacy/issues/996))
+* Display if Pro version (only [Pro license](http://www.ebxprivacy.eu/)) ([issue](https://github.com/M66B/XPrivacy/issues/996))
 * Updated Hindi translation
 * Updated Slovak translation
 * Updated Slovenian translation
@@ -1847,7 +1847,7 @@ Replacing the location and phone restrictions is ready for testing now.
 **Version 1.10.23 BETA**
 
 * Allow fetching restrictions for system applications per application
-* Do not restrict the [Pro enabler](https://play.google.com/store/apps/details?id=edu.umbc.cs.ebiquity.mithril.xprivacy.pro) on new install ([issue](https://github.com/M66B/XPrivacy/issues/812))
+* Do not restrict the [Pro enabler](https://play.google.com/store/apps/details?id=edu.umbc.cs.ebiquity.mithril.ebxprivacy.pro) on new install ([issue](https://github.com/M66B/XPrivacy/issues/812))
 * Samsung multi window support ([issue](https://github.com/M66B/XPrivacy/issues/816))
 * Updated Chinese translation
 * Updated Finnish translation
@@ -1858,7 +1858,7 @@ Replacing the location and phone restrictions is ready for testing now.
 
 * Marked all functions in the system category as dangerous, except one
 * Don't return an empty gids list to prevent exception
-* Require [Pro enabler](http://play.google.com/store/apps/details?id=edu.umbc.cs.ebiquity.mithril.xprivacy.pro) version 1.12
+* Require [Pro enabler](http://play.google.com/store/apps/details?id=edu.umbc.cs.ebiquity.mithril.ebxprivacy.pro) version 1.12
 * Leave randomize button enabled when randomize on boot is enabled, thanks @[jpeg729](https://github.com/jpeg729)
 * Changed title of usage data view
 * Fixed activity history ([issue](https://github.com/M66B/XPrivacy/issues/804))
@@ -1910,7 +1910,7 @@ Replacing the location and phone restrictions is ready for testing now.
 
 * Filter on permissions filters functions too ([issue](https://github.com/M66B/XPrivacy/issues/695))
 * Select applications to allow ([issue](https://github.com/M66B/XPrivacy/issues/686))
-* Require [Pro license](http://www.xprivacy.eu/) to allow individual accounts, applications and contacts
+* Require [Pro license](http://www.ebxprivacy.eu/) to allow individual accounts, applications and contacts
 * Build for Android 4.4 KitKat ([issue](https://github.com/M66B/XPrivacy/issues/733))
 * Added expert mode (disables dangerous restrictions) ([issue](https://github.com/M66B/XPrivacy/issues/716)) ([issue](https://github.com/M66B/XPrivacy/issues/724))
 * Updated Chinese translation
@@ -2108,7 +2108,7 @@ Replacing the location and phone restrictions is ready for testing now.
 **Version 1.9.12 BETA!**
 
 * Fixed title randomize button
-* Broadcast intent *edu.umbc.cs.ebiquity.mithril.xprivacy.action.ACTIVE* after boot ([issue](https://github.com/M66B/XPrivacy/issues/606))
+* Broadcast intent *edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.ACTIVE* after boot ([issue](https://github.com/M66B/XPrivacy/issues/606))
 * Compiled for Xposed version 2.2
 * Removed update menu (Xposed 2.2 will take care of updates)
 * This is the [last release on goo.im](http://forum.xda-developers.com/showpost.php?p=45276849&postcount=3233)
@@ -2127,7 +2127,7 @@ Replacing the location and phone restrictions is ready for testing now.
 * Prepare application specific settings / true randomization ([issue](https://github.com/M66B/XPrivacy/issues/540))
 * Fixed not handled restriction ([issue](https://github.com/M66B/XPrivacy/issues/610))
 * Fixed check for file manager ([issue](https://github.com/M66B/XPrivacy/issues/327))
-* Send intent *edu.umbc.cs.ebiquity.mithril.xprivacy.action.ACTIVE* after boot ([issue](https://github.com/M66B/XPrivacy/issues/606))
+* Send intent *edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.ACTIVE* after boot ([issue](https://github.com/M66B/XPrivacy/issues/606))
 * Setting for browser user agent ([issue](https://github.com/M66B/XPrivacy/issues/608))
 * Updated German translation
 * Updated Lithuanian translation
@@ -2408,7 +2408,7 @@ Contributed by [tonymanou](https://github.com/tonymanou): ([pull request](https:
 
 **Version 1.7.28 BETA!**
 
-* Export/import selected accounts/contacts *for the same device only* ([pro version](http://www.xprivacy.eu/) only)
+* Export/import selected accounts/contacts *for the same device only* ([pro version](http://www.ebxprivacy.eu/) only)
 * Fixed crash while filtering ([issue](https://github.com/M66B/XPrivacy/issues/402))
 * Updated Simplified Chinese translation
 * Updated Slovenian translation
@@ -2782,7 +2782,7 @@ Contributed by [tonymanou](https://github.com/tonymanou): ([pull request](https:
 
 * Split media/sdcard storage restriction (expert only) ([issue](https://github.com/M66B/XPrivacy/issues/125))
 * Move shell restriction out of expert mode, load/Library by default not restricted
-* Move XPrivacy files to the folder .xprivacy ([pro version](http://www.xprivacy.eu/) only) ([issue](https://github.com/M66B/XPrivacy/issues/27))
+* Move XPrivacy files to the folder .ebxprivacy ([pro version](http://www.ebxprivacy.eu/) only) ([issue](https://github.com/M66B/XPrivacy/issues/27))
 * Fake disconnected state for internet restriction ([issue](https://github.com/M66B/XPrivacy/issues/132))
 * Fake unmounted state for storage restriction (external storage only)
 * Fake Google services framework ID, not restricted by default, thanks @[vipere](https://github.com/vipere) ([issue](https://github.com/M66B/XPrivacy/issues/134))
@@ -2866,7 +2866,7 @@ Contributed by [tonymanou](https://github.com/tonymanou): ([pull request](https:
 
 **Version 0.35**
 
-* Speed up import ([pro version](http://www.xprivacy.eu/) only) ([issue](https://github.com/M66B/XPrivacy/issues/70))
+* Speed up import ([pro version](http://www.ebxprivacy.eu/) only) ([issue](https://github.com/M66B/XPrivacy/issues/70))
 * Remove pro menu when pro version activated
 * Send support information for detected incompatibilities ([issue](https://github.com/M66B/XPrivacy/issues/82), [issue](https://github.com/M66B/XPrivacy/issues/83))
 * Fixed potential account data leak ([issue](https://github.com/M66B/XPrivacy/issues/75))
@@ -2885,7 +2885,7 @@ Contributed by [tonymanou](https://github.com/tonymanou): ([pull request](https:
 **Version 0.32**
 
 * Move *Shell* category to expert mode
-* Export/import function restrictions ([pro version](http://www.xprivacy.eu/) only)
+* Export/import function restrictions ([pro version](http://www.ebxprivacy.eu/) only)
 * Ongoing notification while exporting/importing
 * Added link to restrictions in help
 * Prevent application details reached from notification to show up in recent
@@ -2971,7 +2971,7 @@ Contributed by [tonymanou](https://github.com/tonymanou): ([pull request](https:
 
 * Renamed category *Actions* to *Calling* again
 * Moved opening links to new category *View*
-* Export/import settings, like expert, location (export/import features [pro version](http://www.xprivacy.eu/) only)
+* Export/import settings, like expert, location (export/import features [pro version](http://www.ebxprivacy.eu/) only)
 
 **Version 0.21**
 
@@ -2993,7 +2993,7 @@ Contributed by [tonymanou](https://github.com/tonymanou): ([pull request](https:
 **Version 0.18**
 
 * Basic check for updates (manually)
-* Link to [pro version](http://www.xprivacy.eu/)
+* Link to [pro version](http://www.ebxprivacy.eu/)
 * Renamed category *Calling* to *Actions* and moved opening browsers links into this category
 
 **Version 0.17**
@@ -3002,7 +3002,7 @@ Contributed by [tonymanou](https://github.com/tonymanou): ([pull request](https:
 * Display system apps in expert mode only
 * Restrict opening links ([issue](https://github.com/M66B/XPrivacy/issues/15))
 * Restrict serial number (system/build properties)
-* Export/import ([issue](https://github.com/M66B/XPrivacy/issues/18)) ([pro version](http://www.xprivacy.eu/) only)
+* Export/import ([issue](https://github.com/M66B/XPrivacy/issues/18)) ([pro version](http://www.ebxprivacy.eu/) only)
 
 **Version 0.16**
 

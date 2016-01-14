@@ -2,9 +2,9 @@
 
 <h2>Introduction</h2>
 
-<p>XPrivacy utilizes 2 databases (<em>xprivacy.db</em> and <em>usage.db</em>), both are located in <em>/data/system/xprivacy</em>. Making a file backup of the database cannot safely be done in a running system and should be done from recovery!</p>
-<p>XPrivacy checks both the xprivacy database and usage database at system boot for integrity (using 'PRAGMA integrity_check'). If a database is found to be corrupt, the database is deleted, because repairing an sqlite database is mostly not possible (and Android doesn't have the tools for it installed). This can happen to the database of any application, but for XPrivacy it is of course a greater concern. Given the support info I receive, this fortunately happens rarely to the xprivacy database, but more to the usage database. The cause for this difference is that the usage database is set to asynchronous mode for speed reasons (using 'PRAGMA synchronous=OFF').</p>
-<p>The usage database is just an aid and not critical for the operation of XPrivacy. Both the xprivacy and usage database are compacted at boot (using 'VACUUM'). This saves space and is good for performance, but the disadvantage is that twice the size of the database on disk space is temporarily needed.</p>
+<p>XPrivacy utilizes 2 databases (<em>ebxprivacy.db</em> and <em>usage.db</em>), both are located in <em>/data/system/ebxprivacy</em>. Making a file backup of the database cannot safely be done in a running system and should be done from recovery!</p>
+<p>XPrivacy checks both the ebxprivacy database and usage database at system boot for integrity (using 'PRAGMA integrity_check'). If a database is found to be corrupt, the database is deleted, because repairing an sqlite database is mostly not possible (and Android doesn't have the tools for it installed). This can happen to the database of any application, but for XPrivacy it is of course a greater concern. Given the support info I receive, this fortunately happens rarely to the ebxprivacy database, but more to the usage database. The cause for this difference is that the usage database is set to asynchronous mode for speed reasons (using 'PRAGMA synchronous=OFF').</p>
+<p>The usage database is just an aid and not critical for the operation of XPrivacy. Both the ebxprivacy and usage database are compacted at boot (using 'VACUUM'). This saves space and is good for performance, but the disadvantage is that twice the size of the database on disk space is temporarily needed.</p>
 <p>A full disk (/data/system is mounted on internal memory) is fatal for XPrivacy, because the database will become corrupt in this situation. Again looking at the support info, this also rarely happens.</p>
 <p>All mentioned sqlite commands are properly documented on the <a href="http://www.sqlite.org">SQLite website</a></p>
 
@@ -14,15 +14,15 @@
 
 <p><code>adb shell</code></p>
 <p><code>su</code></p>
-<p><code>sqlite3 /data/system/xprivacy/xprivacy.db</code></p>
+<p><code>sqlite3 /data/system/ebxprivacy/ebxprivacy.db</code></p>
 
 <h3>From a Terminal Emulator within Android:</h3>
 
 <p><code>su</code></p>
-</p><code>sqlite3 /data/system/xprivacy/xprivacy.db</code></p>
+</p><code>sqlite3 /data/system/ebxprivacy/ebxprivacy.db</code></p>
 <p>*Note: You may need to install sqlite3 binaries</p>
 
-<h2><em>xprivacy.db</em> consists of two relevant tables</h2>
+<h2><em>ebxprivacy.db</em> consists of two relevant tables</h2>
 
 <h3>TABLE:restriction</h3>
 
@@ -62,7 +62,7 @@
 
 <p>*NOTE: Although the 'method' field doesn't always contain data, it is still NOT NULL. To query empty entries: <code>WHERE method=''</code></p>
 
-<p>*NOTE: Changes to the restriction table require a flush of the server side cache to take effect, this can be achieved with a reboot, using the option 'Flush cache' found in Menu - Settings, or by sending the intent <code>am startservice -a edu.umbc.cs.ebiquity.mithril.xprivacy.action.FLUSH</code>. The intent can either be sent with root privileges or from an app which has permission <code>edu.umbc.cs.ebiquity.mithril.xprivacy.MANAGE_XPRIVACY</code>. For more info see <a href="http://forum.xda-developers.com/showpost.php?p=52669913&postcount=9277">here</a> and <a href="https://github.com/M66B/XPrivacy/issues/1678">here</a></p>
+<p>*NOTE: Changes to the restriction table require a flush of the server side cache to take effect, this can be achieved with a reboot, using the option 'Flush cache' found in Menu - Settings, or by sending the intent <code>am startservice -a edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.FLUSH</code>. The intent can either be sent with root privileges or from an app which has permission <code>edu.umbc.cs.ebiquity.mithril.ebxprivacy.MANAGE_XPRIVACY</code>. For more info see <a href="http://forum.xda-developers.com/showpost.php?p=52669913&postcount=9277">here</a> and <a href="https://github.com/M66B/XPrivacy/issues/1678">here</a></p>
 
 <h3>TABLE:setting</h3>
 
@@ -104,7 +104,7 @@
 
 <h2>QUERY EXAMPLES:</h2>
 
-<h3><em>xprivacy.db</em></h3>
+<h3><em>ebxprivacy.db</em></h3>
 
 <code>SELECT * FROM setting WHERE uid='0';</code>
 

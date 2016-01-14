@@ -11,7 +11,7 @@ Changelog
 
 **Downloads**
 
-* [Xposed module repository](http://repo.xposed.info/module/edu.umbc.cs.ebiquity.mithril.xprivacy) (stable versions)
+* [Xposed module repository](http://repo.xposed.info/module/edu.umbc.cs.ebiquity.mithril.ebxprivacy) (stable versions)
 * [GitHub releases](https://github.com/M66B/XPrivacy/releases) (test and beta versions)
 
 **Important**
@@ -40,10 +40,10 @@ Changelog
 
 * Fixed crash on clear cache (flush) on Lollipop
 * Fixed translation of isolated process uids (debug info)
-* Reading property *xprivacy.options=ignoreselinux* from */system/build.prop* to ignore SELinux
+* Reading property *ebxprivacy.options=ignoreselinux* from */system/build.prop* to ignore SELinux
 	* Settings this property enables reading of these files again, but might result in a bootloop for some:
-		* */data/system/xprivacy/disabled*
-		* */data/system/xprivacy/aosp*
+		* */data/system/ebxprivacy/disabled*
+		* */data/system/ebxprivacy/aosp*
 			* This file can be created/deleted by toggling the main setting *AOSP mode*
 
 **Version 3.6.15 BETA**
@@ -188,7 +188,7 @@ Lollipop:
 
 **Version 3.5.4 BETA**
 
-* Broadcast *edu.umbc.cs.ebiquity.mithril.xprivacy.action.EXCEPTION* if the database could not be read ([issue](/../../issues/2081))
+* Broadcast *edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.EXCEPTION* if the database could not be read ([issue](/../../issues/2081))
 * Fixed all problems reported through the debug info
 * Allow querying information about own package in most cases ([issue](/../../issues/2079))
 * Updated French translation
@@ -198,7 +198,7 @@ Lollipop:
 **Version 3.5.3 BETA**
 
 * Restart notification for *requestLocationUpdates*, *requestSingleUpdate* and *Srv_requestLocationUpdates*
-* Notify and do not send the intent *edu.umbc.cs.ebiquity.mithril.xprivacy.action.ACTIVE* when the privacy database was corrupt (discussed on XDA)
+* Notify and do not send the intent *edu.umbc.cs.ebiquity.mithril.ebxprivacy.action.ACTIVE* when the privacy database was corrupt (discussed on XDA)
 
 **Version 3.5.2 BETA**
 
@@ -342,7 +342,7 @@ Lollipop:
 
 **Version 3.2.4 TEST**
 
-* Persist/show original values for: ([pro license](http://www.xprivacy.eu/) only) ([issue](/../../issues/1297))
+* Persist/show original values for: ([pro license](http://www.ebxprivacy.eu/) only) ([issue](/../../issues/1297))
 	* advertisement ID
 	* phone number
 	* Android ID
@@ -354,7 +354,7 @@ Lollipop:
 
 **Version 3.2.3 TEST**
 
-* Persist/show original values ([pro license](http://www.xprivacy.eu/) only) ([issue](/../../issues/1297))
+* Persist/show original values ([pro license](http://www.ebxprivacy.eu/) only) ([issue](/../../issues/1297))
 	* Persisting/showing fake values would require an extra call to the privacy service, which would impact performance
 	* Proof of concept with *SERIAL*
 * Flush local application caches too
