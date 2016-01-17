@@ -214,6 +214,8 @@ public class PrivacyService extends IPrivacyService.Stub {
 		// Runs client side
 		try {
 			IPrivacyService client = getClient();
+			Log.v("client.getVersion()", Integer.toString(client.getVersion()));
+			Log.v("cCurrentVersion", Integer.toString(cCurrentVersion));
 			if (client != null)
 				return (client.getVersion() == cCurrentVersion);
 		} catch (SecurityException ignored) {

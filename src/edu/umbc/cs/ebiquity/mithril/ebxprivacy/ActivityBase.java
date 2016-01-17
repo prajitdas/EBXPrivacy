@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 import edu.umbc.cs.ebiquity.mithril.R;
 
 @SuppressLint("Registered")
