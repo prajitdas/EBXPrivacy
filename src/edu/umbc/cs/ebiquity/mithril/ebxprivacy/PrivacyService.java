@@ -67,6 +67,7 @@ import android.widget.Spinner;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+import edu.umbc.cs.ebiquity.mithril.MithrilApplication;
 import edu.umbc.cs.ebiquity.mithril.R;
 
 public class PrivacyService extends IPrivacyService.Stub {
@@ -233,6 +234,7 @@ public class PrivacyService extends IPrivacyService.Stub {
 				Class<?> cServiceManager = Class.forName("android.os.ServiceManager");
 				Method mGetService = cServiceManager.getDeclaredMethod("getService", String.class);
 				mClient = IPrivacyService.Stub.asInterface((IBinder) mGetService.invoke(null, getServiceName()));
+				Log.v(MithrilApplication.getConstDebugTag(), getServiceName());
 			} catch (Throwable ex) {
 				Util.bug(null, ex);
 			}
